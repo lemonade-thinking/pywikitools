@@ -1,3 +1,5 @@
+:orphan:
+
 :py:mod:`pywikitools.libreoffice`
 =================================
 
@@ -12,13 +14,9 @@ Classes
 
 .. autoapisummary::
 
-   pywikitools.libreoffice.FontSlant
    pywikitools.libreoffice.LibreOffice
 
 
-
-
-.. py:class:: FontSlant
 
 
 .. py:class:: LibreOffice(headless: bool = False)
@@ -29,16 +27,6 @@ Classes
 
    You need to make sure that you first call open_file() before calling other functions,
    otherwise you get an AssertionError
-
-   .. py:attribute:: PORT
-      :annotation: = 2002
-
-      
-
-   .. py:attribute:: CONNECT_TRIES
-      :annotation: = 10
-
-      
 
    .. py:attribute:: TIMEOUT
       :annotation: = 200
@@ -51,9 +39,6 @@ Classes
 
       This starts LibreOffice and establishes a socket connection to it
       Raises ConnectionError if something doesn't work
-
-
-   .. py:method:: get_page_count(self) -> int
 
 
    .. py:method:: search_and_replace(self, search: str, replace: str, warn_if_pages_change: bool = False, parse_formatting: bool = False) -> bool

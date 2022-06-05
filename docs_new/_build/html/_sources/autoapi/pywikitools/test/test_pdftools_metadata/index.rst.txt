@@ -1,3 +1,5 @@
+:orphan:
+
 :py:mod:`pywikitools.test.test_pdftools_metadata`
 =================================================
 
@@ -61,12 +63,6 @@ Classes
    .. py:method:: setUp(self)
 
       Hook method for setting up the test fixture before exercising it.
-
-
-   .. py:method:: test_check_metadata(self, mock_pikepdf)
-
-
-   .. py:method:: test_real_examples(self)
 
 
 

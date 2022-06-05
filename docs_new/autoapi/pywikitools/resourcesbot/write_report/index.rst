@@ -1,3 +1,5 @@
+:orphan:
+
 :py:mod:`pywikitools.resourcesbot.write_report`
 ===============================================
 
@@ -25,26 +27,6 @@ Classes
    Generic enumeration.
 
    Derive from this class to define new enumerations.
-
-   .. py:attribute:: GREEN
-      :annotation: = green
-
-      
-
-   .. py:attribute:: ORANGE
-      :annotation: = orange
-
-      
-
-   .. py:attribute:: RED
-      :annotation: = red
-
-      
-
-   .. py:method:: __str__(self) -> str
-
-      Return str(self).
-
 
 
 .. py:class:: WriteReport(site: pywikibot.site.APISite, force_rewrite: bool = False)

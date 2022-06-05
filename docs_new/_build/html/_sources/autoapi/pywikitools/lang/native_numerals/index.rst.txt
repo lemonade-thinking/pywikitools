@@ -1,3 +1,5 @@
+:orphan:
+
 :py:mod:`pywikitools.lang.native_numerals`
 ==========================================
 
@@ -7,14 +9,6 @@
 Module Contents
 ---------------
 
-Classes
-~~~~~~~
-
-.. autoapisummary::
-
-   pywikitools.lang.native_numerals.NativeNumerals
-
-
 
 Functions
 ~~~~~~~~~
@@ -23,29 +17,6 @@ Functions
 
    pywikitools.lang.native_numerals.native_to_standard_numeral
 
-
-
-.. py:class:: NativeNumerals
-
-   .. py:attribute:: hindi
-      :annotation: :Dict[str, str]
-
-      
-
-   .. py:attribute:: kannada
-      :annotation: :Dict[str, str]
-
-      
-
-   .. py:attribute:: tamil
-      :annotation: :Dict[str, str]
-
-      
-
-   .. py:attribute:: languages
-      :annotation: :Dict[str, Dict]
-
-      
 
 
 .. py:function:: native_to_standard_numeral(language_code: str, native_text: str) -> str

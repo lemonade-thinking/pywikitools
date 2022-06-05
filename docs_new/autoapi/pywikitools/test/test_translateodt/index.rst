@@ -1,3 +1,5 @@
+:orphan:
+
 :py:mod:`pywikitools.test.test_translateodt`
 ============================================
 
@@ -12,15 +14,9 @@ Classes
 
 .. autoapisummary::
 
-   pywikitools.test.test_translateodt.DummyTranslateODT
    pywikitools.test.test_translateodt.TestTranslateODT
 
 
-
-
-.. py:class:: DummyTranslateODT
-
-   Bases: :py:obj:`pywikitools.translateodt.TranslateODT`
 
 
 .. py:class:: TestTranslateODT(methodName='runTest')
@@ -63,31 +59,9 @@ Classes
       Hook method for setting up the test fixture before exercising it.
 
 
-   .. py:method:: test_is_search_and_replace_necessary(self)
+   .. py:method:: tearDown(self)
 
-
-   .. py:method:: test_process_snippet(self)
-
-
-   .. py:method:: test_get_odt_filename(self)
-
-
-   .. py:method:: test_set_properties(self)
-
-
-   .. py:method:: test_cleanup_units(self)
-
-
-   .. py:method:: _sort_units(self, definitions: List[str], translations: List[str]) -> Tuple[List[str], List[str]]
-
-      Create translation units, sort them and return lists of definitions and translations
-      The return format is for easier comparison of the expected outcome
-
-
-   .. py:method:: test_special_sort_units(self)
-
-
-   .. py:method:: test_read_worksheet_config(self)
+      Hook method for deconstructing the test fixture after testing it.
 
 
 

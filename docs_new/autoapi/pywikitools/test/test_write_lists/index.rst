@@ -1,3 +1,5 @@
+:orphan:
+
 :py:mod:`pywikitools.test.test_write_lists`
 ===========================================
 
@@ -58,27 +60,9 @@ Classes
       Hook method for setting up class fixture before running tests in the class.
 
 
-   .. py:method:: test_force_rewrite(self)
-
-
-   .. py:method:: test_needs_rewrite(self)
-
-
-   .. py:method:: test_create_file_mediawiki(self)
-
-
    .. py:method:: test_create_mediawiki(self)
 
       Test creation of the list of available resources for a language
-
-
-   .. py:method:: test_find_resources_list(self)
-
-
-   .. py:method:: test_run_edge_cases(self, mock_page)
-
-
-   .. py:method:: test_run(self, mock_page)
 
 
 

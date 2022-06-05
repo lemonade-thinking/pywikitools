@@ -65,25 +65,4 @@ Classes
       Hook method for setting up the test fixture before exercising it.
 
 
-   .. py:method:: test_is_standard(self)
-
-
-   .. py:method:: test_is_asian(self)
-
-
-   .. py:method:: test_is_complex(self)
-
-
-   .. py:method:: test_has_custom_font(self)
-
-
-   .. py:method:: test_get_custom_font(self)
-
-
-   .. py:method:: test_to_str(self)
-
-
-   .. py:method:: test_to_locale(self)
-
-
 

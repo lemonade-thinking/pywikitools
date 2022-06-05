@@ -1,3 +1,5 @@
+:orphan:
+
 :py:mod:`pywikitools.htmltools.beautify_html`
 =============================================
 
@@ -31,15 +33,6 @@ Classes
       TODO For English pages you need to take fortraininglib.get_page_html("Prayer/en").
       Don't use fortraininglib.get_page_html("Prayer") as we would need to remove the [edit] sections
       TODO think of a better architecture?
-
-
-   .. py:method:: _extract_image_name(self, path: str) -> str
-
-      Extract the "real" name of the image in the mediawiki system out of a given path
-
-      We receive <img> tags with src tags following one of two possible structures:
-        src="/mediawiki/images/thumb/5/51/Hand_5.png/30px-Hand_5.png" -> extract "Hand_5.png"
-        src="/mediawiki/images/a/ab/Family.png" -> extract "Family.png"
 
 
    .. py:method:: img_rewrite_handler(self, element)

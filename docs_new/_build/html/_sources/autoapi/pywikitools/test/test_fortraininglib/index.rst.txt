@@ -66,40 +66,9 @@ Classes
       Hook method for setting up the test fixture before exercising it.
 
 
-   .. py:method:: test_get(self, mock_get)
+   .. py:method:: tearDown(self)
 
-
-   .. py:method:: test_get_with_timeouts(self, mock_get)
-
-
-   .. py:method:: test_get_with_single_timeout(self, mock_get)
-
-
-   .. py:method:: test_get_with_json_decode_error(self, mock_get)
-
-
-   .. py:method:: test_get_language_name(self)
-
-
-   .. py:method:: test_list_page_translations(self)
-
-
-   .. py:method:: test_list_page_templates(self)
-
-
-   .. py:method:: test_get_pdf_name(self)
-
-
-   .. py:method:: test_get_version(self)
-
-
-   .. py:method:: test_title_to_message(self)
-
-
-   .. py:method:: test_get_file_url(self)
-
-
-   .. py:method:: test_get_translation_units(self)
+      Hook method for deconstructing the test fixture after testing it.
 
 
 

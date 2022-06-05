@@ -20,39 +20,9 @@ Functions
 
 .. autoapisummary::
 
-   pywikitools.dropboxupload.usage
-   pywikitools.dropboxupload._upload
    pywikitools.dropboxupload.upload_string
    pywikitools.dropboxupload.upload_file
 
-
-
-Attributes
-~~~~~~~~~~
-
-.. autoapisummary::
-
-   pywikitools.dropboxupload.logger
-   pywikitools.dropboxupload.config
-   pywikitools.dropboxupload.languagecode
-
-
-.. py:data:: logger
-   
-
-   
-
-.. py:data:: config
-   
-
-   
-
-.. py:function:: usage()
-
-
-.. py:function:: _upload(filename: str, content: bytes) -> bool
-
-   Internal upload function: write content to the specified file
 
 
 .. py:function:: upload_string(languagecode: str, filename: str, content: str) -> bool
@@ -71,9 +41,4 @@ Attributes
    @param filename can also include a path
    @return True for Success, False if error occured
 
-
-.. py:data:: languagecode
-   
-
-   
 

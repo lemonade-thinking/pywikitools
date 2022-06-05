@@ -21,11 +21,14 @@ Classes
    pywikitools.test.test_correctbot.TestLanguageCorrectors
    pywikitools.test.test_correctbot.UniversalCorrectorTester
    pywikitools.test.test_correctbot.TestUniversalCorrector
+   pywikitools.test.test_correctbot.NoSpaceBeforePunctuationCorrectorTester
+   pywikitools.test.test_correctbot.TestNoSpaceBeforePunctuationCorrector
    pywikitools.test.test_correctbot.RTLCorrectorTester
    pywikitools.test.test_correctbot.TestRTLCorrector
    pywikitools.test.test_correctbot.TestGermanCorrector
    pywikitools.test.test_correctbot.TestFrenchCorrector
    pywikitools.test.test_correctbot.TestArabicCorrector
+   pywikitools.test.test_correctbot.TestCorrectBot
 
 
 
@@ -39,37 +42,6 @@ Functions
    pywikitools.test.test_correctbot.filename_correct
 
 
-
-Attributes
-~~~~~~~~~~
-
-.. autoapisummary::
-
-   pywikitools.test.test_correctbot.PKG_CORRECTORS
-   pywikitools.test.test_correctbot.MOD_UNIVERSAL
-   pywikitools.test.test_correctbot.MOD_BASE
-   pywikitools.test.test_correctbot.CORRECTORS_FOLDER
-
-
-.. py:data:: PKG_CORRECTORS
-   :annotation: = pywikitools.correctbot.correctors
-
-   
-
-.. py:data:: MOD_UNIVERSAL
-   
-
-   
-
-.. py:data:: MOD_BASE
-   
-
-   
-
-.. py:data:: CORRECTORS_FOLDER
-   :annotation: = ../correctbot/correctors
-
-   
 
 .. py:function:: correct(corrector: pywikitools.correctbot.correctors.base.CorrectorBase, text: str, original: Optional[str] = None) -> str
 
@@ -107,11 +79,6 @@ Attributes
    https://www.4training.net/mediawiki/index.php?title=Translations:How_to_Continue_After_a_Prayer_Time/1/ar&oldid=62258
    which is similar to https://www.4training.net/mediawiki/index.php?Translations:How_to_Continue_After_a_Prayer_Time/1/ar&type=revision&diff=62258&oldid=62195    # noqa: E501
    See also https://www.4training.net/mediawiki/index.php?title=Translations:How_to_Continue_After_a_Prayer_Time/1/ar&action=history                               # noqa: E501
-
-   .. py:attribute:: corrector
-      :annotation: :pywikitools.correctbot.correctors.base.CorrectorBase
-
-      
 
    .. py:method:: compare_revisions(self, page: str, language_code: str, identifier: int, old_revision: int, new_revision: int)
 
@@ -233,23 +200,35 @@ Attributes
        by assert methods using difflib. It is looked up as an instance
        attribute so can be configured by individual tests if required.
 
-   .. py:method:: test_spaces(self)
+
+.. py:class:: NoSpaceBeforePunctuationCorrectorTester
+
+   Bases: :py:obj:`pywikitools.correctbot.correctors.base.CorrectorBase`, :py:obj:`pywikitools.correctbot.correctors.universal.NoSpaceBeforePunctuationCorrector`
+
+   With this class we can test the rules of NoSpaceBeforePunctuationCorrector
 
 
-   .. py:method:: test_capitalization(self)
+.. py:class:: TestNoSpaceBeforePunctuationCorrector(methodName='runTest')
 
+   Bases: :py:obj:`CorrectorTestCase`
 
-   .. py:method:: test_filename_corrections(self)
+   Adds functions to check corrections against revisions made in the mediawiki system
 
+   Use this as base class if you need this functionality. They come with the cost of doing
+   real mediawiki API calls, taking significant time. The benefit is that you don't need to include
+   potentially long strings in complex languages in the source code
 
-   .. py:method:: test_dash_correction(self)
+   If you use this as base class, you need to set it up with the right corrector class like this:
+   @classmethod
+   def setUpClass(cls):
+       cls.corrector = GermanCorrector()
 
-
-   .. py:method:: test_final_dot_correction(self)
-
-
-   .. py:method:: test_mediawiki_bold_italic(self)
-
+   Example: compare_revisions("How_to_Continue_After_a_Prayer_Time", "ar", 1, 62195, 62258)
+   calls
+   https://www.4training.net/mediawiki/index.php?title=Translations:How_to_Continue_After_a_Prayer_Time/1/ar&oldid=62195
+   https://www.4training.net/mediawiki/index.php?title=Translations:How_to_Continue_After_a_Prayer_Time/1/ar&oldid=62258
+   which is similar to https://www.4training.net/mediawiki/index.php?Translations:How_to_Continue_After_a_Prayer_Time/1/ar&type=revision&diff=62258&oldid=62195    # noqa: E501
+   See also https://www.4training.net/mediawiki/index.php?title=Translations:How_to_Continue_After_a_Prayer_Time/1/ar&action=history                               # noqa: E501
 
 
 .. py:class:: RTLCorrectorTester
@@ -287,12 +266,6 @@ Attributes
       Hook method for setting up class fixture before running tests in the class.
 
 
-   .. py:method:: test_fix_rtl_title(self)
-
-
-   .. py:method:: test_fix_rtl_filename(self)
-
-
 
 .. py:class:: TestGermanCorrector(methodName='runTest')
 
@@ -315,9 +288,6 @@ Attributes
    https://www.4training.net/mediawiki/index.php?title=Translations:How_to_Continue_After_a_Prayer_Time/1/ar&oldid=62258
    which is similar to https://www.4training.net/mediawiki/index.php?Translations:How_to_Continue_After_a_Prayer_Time/1/ar&type=revision&diff=62258&oldid=62195    # noqa: E501
    See also https://www.4training.net/mediawiki/index.php?title=Translations:How_to_Continue_After_a_Prayer_Time/1/ar&action=history                               # noqa: E501
-
-   .. py:method:: test_correct_quotes(self)
-
 
 
 .. py:class:: TestFrenchCorrector(methodName='runTest')
@@ -363,12 +333,6 @@ Attributes
       Space after all punctuation marks.
 
 
-   .. py:method:: test_false_friends_replacement(self)
-
-
-   .. py:method:: test_correct_quotation_marks(self)
-
-
 
 .. py:class:: TestArabicCorrector(methodName='runTest')
 
@@ -398,13 +362,55 @@ Attributes
       Hook method for setting up class fixture before running tests in the class.
 
 
-   .. py:method:: test_correct_punctuation(self)
+
+.. py:class:: TestCorrectBot(methodName='runTest')
+
+   Bases: :py:obj:`unittest.TestCase`
+
+   A class whose instances are single test cases.
+
+   By default, the test code itself should be placed in a method named
+   'runTest'.
+
+   If the fixture may be used for many test cases, create as
+   many test methods as are needed. When instantiating such a TestCase
+   subclass, specify in the constructor arguments the name of the test method
+   that the instance is to execute.
+
+   Test authors should subclass TestCase for their own tests. Construction
+   and deconstruction of the test's environment ('fixture') can be
+   implemented by overriding the 'setUp' and 'tearDown' methods respectively.
+
+   If it is necessary to override the __init__ method, the base class
+   __init__ method must always be called. It is important that subclasses
+   should not change the signature of their __init__ method, since instances
+   of the classes are instantiated automatically by parts of the framework
+   in order to be run.
+
+   When subclassing TestCase, you can set these attributes:
+   * failureException: determines which exception will be raised when
+       the instance's assertion methods fail; test methods raising this
+       exception will be deemed to have 'failed' rather than 'errored'.
+   * longMessage: determines whether long messages (including repr of
+       objects used in assert methods) will be printed on failure in *addition*
+       to any explicit message passed.
+   * maxDiff: sets the maximum length of a diff in failure messages
+       by assert methods using difflib. It is looked up as an instance
+       attribute so can be configured by individual tests if required.
+
+   .. py:method:: setUp(self)
+
+      Hook method for setting up the test fixture before exercising it.
 
 
-   .. py:method:: test_correct_spaces(self)
+   .. py:method:: prepare_translated_page(self) -> pywikitools.lang.translated_page.TranslatedPage
+
+      Prepare a TranslatedPage object out of the FRENCH_CORRECTIONS dictionary
 
 
-   .. py:method:: test_real_life_examples(self)
+   .. py:method:: test_save_report(self, mock_page)
+
+      Check that output of CorrectBot.save_report() is the same as expected in data/correctbot_report.mediawiki
 
 
 

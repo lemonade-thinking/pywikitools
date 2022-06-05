@@ -1,3 +1,5 @@
+:orphan:
+
 :py:mod:`pywikitools.test.test_consistency_checks`
 ==================================================
 
@@ -52,7 +54,14 @@ Classes
        by assert methods using difflib. It is looked up as an instance
        attribute so can be configured by individual tests if required.
 
-   .. py:method:: test_extract_link(self)
+   .. py:method:: setUp(self)
+
+      Hook method for setting up the test fixture before exercising it.
+
+
+   .. py:method:: tearDown(self)
+
+      Hook method for deconstructing the test fixture after testing it.
 
 
    .. py:method:: test_everything_in_english(self)

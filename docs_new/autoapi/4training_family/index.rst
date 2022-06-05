@@ -34,16 +34,6 @@ Classes
 
    Parent singleton class for all wiki families.
 
-   .. py:attribute:: name
-      :annotation: = 4training
-
-      
-
-   .. py:attribute:: langs
-      
-
-      
-
    .. py:method:: scriptpath(self, code)
 
       The prefix used to locate scripts on this wiki.

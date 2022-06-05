@@ -68,14 +68,6 @@ Functions
 
 
 
-Attributes
-~~~~~~~~~~
-
-.. autoapisummary::
-
-   pywikitools.resources_bot.resourcesbot
-
-
 .. py:function:: parse_arguments() -> pywikitools.resourcesbot.bot.ResourcesBot
 
    Parses command-line arguments.
@@ -90,9 +82,4 @@ Attributes
    configured in the config.ini
    @param loglevel: logging.WARNING is standard, logging.INFO for more details, logging.DEBUG for a lot of output
 
-
-.. py:data:: resourcesbot
-   
-
-   
 

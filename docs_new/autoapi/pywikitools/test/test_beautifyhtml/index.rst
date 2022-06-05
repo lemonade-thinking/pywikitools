@@ -1,3 +1,5 @@
+:orphan:
+
 :py:mod:`pywikitools.test.test_beautifyhtml`
 ============================================
 
@@ -51,12 +53,6 @@ Classes
    * maxDiff: sets the maximum length of a diff in failure messages
        by assert methods using difflib. It is looked up as an instance
        attribute so can be configured by individual tests if required.
-
-   .. py:method:: test_get_image_basename(self)
-
-
-   .. py:method:: test_img_rewrite_handler(self)
-
 
    .. py:method:: test_with_real_example(self)
 

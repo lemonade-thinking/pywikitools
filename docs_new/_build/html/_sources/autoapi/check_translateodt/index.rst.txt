@@ -19,7 +19,6 @@ Classes
 .. autoapisummary::
 
    check_translateodt.DummyLibreOffice
-   check_translateodt.DummyTranslateODT
 
 
 
@@ -30,14 +29,6 @@ Functions
 
    check_translateodt.parse_arguments
 
-
-
-Attributes
-~~~~~~~~~~
-
-.. autoapisummary::
-
-   check_translateodt.args
 
 
 .. py:class:: DummyLibreOffice(headless: bool = False)
@@ -102,17 +93,6 @@ Attributes
 
 
 
-.. py:class:: DummyTranslateODT
-
-   Bases: :py:obj:`pywikitools.translateodt.TranslateODT`
-
-   .. py:method:: _fetch_english_file(self, odt_file: str) -> str
-
-      Download the specified file from the mediawiki server
-      @return full path of the downloaded file (empty string on error)
-
-
-
 .. py:function:: parse_arguments() -> argparse.Namespace
 
    Parses the arguments given from outside
@@ -120,9 +100,4 @@ Attributes
    :returns: parsed arguments
    :rtype: argparse.Namespace
 
-
-.. py:data:: args
-   
-
-   
 

@@ -13,6 +13,5 @@ This page contains auto-generated API reference documentation [#f1]_.
    /autoapi/generateodt/index
    /autoapi/correct_bot/index
    /autoapi/check_for_typos/index
-   /autoapi/correctors/index
 
 .. [#f1] Created with `sphinx-autoapi <https://github.com/readthedocs/sphinx-autoapi>`_

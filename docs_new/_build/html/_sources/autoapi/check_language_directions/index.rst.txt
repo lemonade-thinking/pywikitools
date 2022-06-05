@@ -16,31 +16,3 @@
 
 
 
-Module Contents
----------------
-
-.. py:data:: fortraininglib
-   
-
-   
-
-.. py:data:: language_list
-   
-
-   
-
-.. py:data:: counter
-   :annotation: :int = 0
-
-   
-
-.. py:data:: warning
-   :annotation: :int = 0
-
-   
-
-.. py:data:: json
-   
-
-   
-

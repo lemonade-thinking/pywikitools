@@ -60,7 +60,4 @@ Classes
        by assert methods using difflib. It is looked up as an instance
        attribute so can be configured by individual tests if required.
 
-   .. py:method:: test_native_to_standard_numeral(self)
-
-
 

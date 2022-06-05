@@ -75,11 +75,6 @@ Functions
 
    This data structure is meant to be read-only after creation.
 
-   .. py:attribute:: __slots__
-      :annotation: = ['corrections', 'suggestions', 'correction_stats', 'suggestion_stats', 'warnings']
-
-      
-
 
 .. py:class:: CorrectorBase
 
@@ -108,38 +103,19 @@ Functions
       We don't do any checks if unit actually is a filename - that's the responsibility of the caller
 
 
-   .. py:method:: _run_functions(self, unit: pywikitools.lang.translated_page.TranslationUnit, functions: Generator[str, None, None]) -> CorrectionResult
-
-      Call all the functions given by the generator one after the other
-
-      Caution: the generator must not yield any function from this class, otherwise we run into indefinite recursion
-
-
-   .. py:method:: _correct_unit(self, corrector_function: Callable, unit: pywikitools.lang.translated_page.TranslationUnit, correct_snippets: bool) -> bool
-
-      Run a correction function on a translation unit
-      @param unit: the translation unit the correction function should be applied to. Will be modified directly
-      @param correct_snippets: Should we run all correction functions on each snippets or just on the complete unit?
-                               Caution! The caller is responsible that the unit is well-structured!
-      @return did we make any changes?
-
-
-   .. py:method:: _call_function(self, corrector_function: Callable, text: str, original: str) -> str
-
-      Call a correction function with the correct number of parameters
-
-      We check with introspection if we need to give both parameters or just one.
-      @return corrected text
-
-
    .. py:method:: print_stats(self, stats: Dict[str, int]) -> str
 
-      Write a detailed overview with how much corrections were made and by which functions.
+      Write a detailed overview with how many corrections were made and by which functions.
 
       In the details we'll read from the documentation strings of the functions used
       and take the first line (in case the documentation has several lines)
       If a function is not documented then just its name is printed.
-      @param stats: Dictionary with the "raw" statistics (name of the function -> how many times was it applied)
+
+      :param stats: Dictionary with the "raw" statistics (name of the function -> how many times was it applied)
+
+      :returns: A human-readable string with individual lines for each rule that was applied at least once.
+                The string is at the same time valid mediawiki code for rendering a list
+                An empty string if no rules were applied
 
 
 

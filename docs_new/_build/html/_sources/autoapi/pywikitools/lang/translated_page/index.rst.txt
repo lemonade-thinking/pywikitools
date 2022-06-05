@@ -1,3 +1,5 @@
+:orphan:
+
 :py:mod:`pywikitools.lang.translated_page`
 ==========================================
 
@@ -27,16 +29,6 @@ Classes
    Markup means mediawiki formatting instructions (e.g. <b>, ===, <br/>, ''', ;, # , </i> )
    Text is some human-readable content without any markup in between
 
-   .. py:attribute:: TEXT_SNIPPET
-      :annotation: = Text
-
-      
-
-   .. py:attribute:: MARKUP_SNIPPET
-      :annotation: = Markup
-
-      
-
 
 .. py:class:: TranslationSnippet(snippet_type: SnippetType, content: str)
 
@@ -44,25 +36,6 @@ Classes
 
    Content can be directly changed - use TranslationUnit.sync_from_snippets() to save it in the
    corresponding TranslationUnit
-
-   .. py:attribute:: __slots__
-      :annotation: = ['type', 'content']
-
-      
-
-   .. py:method:: is_text(self) -> bool
-
-
-   .. py:method:: is_markup(self) -> bool
-
-
-   .. py:method:: is_br(self) -> bool
-
-
-   .. py:method:: __str__(self)
-
-      Return str(self).
-
 
 
 .. py:class:: TranslationUnit(identifier: str, language_code: str, definition: str, translation: Optional[str])
@@ -76,27 +49,9 @@ Classes
    There is no real persistence, so if you want to permanently store the changes in the mediawiki system
    you need to take care of that yourself.
 
-   .. py:attribute:: RED
-      :annotation: :Final[str] = [0;31m
-
-      
-
-   .. py:attribute:: GREEN
-      :annotation: :Final[str] = [0;32m
-
-      
-
-   .. py:attribute:: NO_COLOR
-      :annotation: :Final[str] = [0m
-
-      
-
    .. py:method:: is_title(self) -> bool
 
       Is this unit holding the title of a page?
-
-
-   .. py:method:: get_definition(self) -> str
 
 
    .. py:method:: set_definition(self, text: str)
@@ -112,6 +67,11 @@ Classes
    .. py:method:: get_translation(self) -> str
 
       Returns an empty string if no translation exists
+
+
+   .. py:method:: get_original_translation(self) -> str
+
+      Return the original translation this TranslationUnit was constructed with
 
 
    .. py:method:: set_translation(self, text: str)
@@ -131,9 +91,6 @@ Classes
 
       Returns a diff between original translation content and current translation content.
       If you made changes to snippets, make sure you first call sync_from_snippets()!
-
-
-   .. py:method:: get_name(self)
 
 
    .. py:method:: remove_links(self)
@@ -157,52 +114,12 @@ Classes
       For *#;: if there is a following whitespace character, include it also in the match.
 
 
-   .. py:method:: _ensure_split(self)
-
-      Split into snippets if that hasn't happened yet
-
-
    .. py:method:: is_translation_well_structured(self) -> Tuple[bool, str]
 
       Is the snippet structure of original and translation the same?
 
       This does quite some logging to provide helpful feedback for people working on the translations
       @return Tuple of actual return value and warning message if it is False
-
-
-   .. py:method:: __iter__(self)
-
-      Make this class iterable in a simple way (not suitable for concurrency!)
-
-
-   .. py:method:: __next__(self)
-
-      Return a next tuple of original and translated snippet with content
-
-      This leaves out snippets that are markup. Also it assumes is_translation_well_structured(),
-      otherwise this will probably raise errors (todo make it more robust?)
-
-
-   .. py:method:: __str__(self) -> str
-
-      Return str(self).
-
-
-   .. py:method:: __copy__(self)
-
-      Return a copy of our TranslationUnit
-
-
-   .. py:method:: __lt__(self, other) -> bool
-
-      Compare our TranslationUnit to another TranslationUnit: Is any of our snippet definitions a substring
-      of a snippet of the other TranslationUnit?
-
-      Used in TranslateODT.special_sort_units()
-
-      Remark: We don't check whether the snippets in self._definition_snippets contain each other -
-      any translation administrator should make sure that never happens...
-      @return Tuple(self_is_in_other, other_is_in_self)
 
 
 
@@ -215,45 +132,9 @@ Classes
    Also there is no persistence: If you make changes it's your responsibility to write them back
    to the mediawiki system.
 
-   .. py:attribute:: __slots__
-      :annotation: = ['page', 'language_code', 'units', '_english_info', '_worksheet_info', '_iterate_pos']
-
-      
-
-   .. py:method:: get_english_info(self) -> pywikitools.resourcesbot.data_structures.WorksheetInfo
-
-
-   .. py:method:: get_worksheet_info(self) -> pywikitools.resourcesbot.data_structures.WorksheetInfo
-
-
-   .. py:method:: is_untranslated(self) -> bool
-
-
-   .. py:method:: _analyze_units(self)
-
-      Analyzes translation units to fill our self._english_info and self._worksheet_info
-
-      Previously extracted information is discarded.
-      Information on ODT files is added (if existing) with url = filename (no full URL) and incorrect timestamp
-      Information information on PDF files is not extracted as it is currently not needed.
-      As we don't know here whether a translation is fuzzy (possible outdated) or not, the generated
-      TranslationProgress will always have fuzzy = 0.
-      Currently we are not giving any warnings even if headline_original or version_original is empty
-
-
    .. py:method:: add_translation_unit(self, unit: TranslationUnit)
 
       Append a translation unit. Infos are not invalidated
-
-
-   .. py:method:: __iter__(self)
-
-      Make this class iterable in a simple way (not suitable for concurrency!)
-
-
-   .. py:method:: __next__(self)
-
-      Return a next translation unit
 
 
 

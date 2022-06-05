@@ -33,11 +33,6 @@ Classes
    Next step: Write the results to some meaningful place on 4training.net
               so that translators can access them and correct inconsistencies
 
-   .. py:attribute:: TITLE
-      :annotation: :Final[str] = Page display title
-
-      
-
    .. py:method:: extract_link(self, text: str) -> Tuple[str, str]
 
       Search in text for a mediawiki link of the form [[Destination|Title]].

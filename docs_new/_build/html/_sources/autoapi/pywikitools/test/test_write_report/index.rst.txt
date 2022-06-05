@@ -1,3 +1,5 @@
+:orphan:
+
 :py:mod:`pywikitools.test.test_write_report`
 ============================================
 
@@ -55,15 +57,6 @@ Classes
    .. py:method:: setUp(self)
 
       Hook method for setting up the test fixture before exercising it.
-
-
-   .. py:method:: test_created_mediawiki(self)
-
-
-   .. py:method:: test_save_language_report(self, mock_page)
-
-
-   .. py:method:: test_run(self, mock_save)
 
 
 

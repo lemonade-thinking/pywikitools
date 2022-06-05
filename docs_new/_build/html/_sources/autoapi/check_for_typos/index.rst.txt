@@ -26,14 +26,6 @@ Functions
 
 
 
-Attributes
-~~~~~~~~~~
-
-.. autoapisummary::
-
-   check_for_typos.args
-
-
 .. py:function:: parse_arguments() -> argparse.Namespace
 
    Parses the arguments given from outside
@@ -41,9 +33,4 @@ Attributes
    :returns: parsed arguments
    :rtype: argparse.Namespace
 
-
-.. py:data:: args
-   
-
-   
 

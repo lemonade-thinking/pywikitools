@@ -1,3 +1,5 @@
+:orphan:
+
 :py:mod:`pywikitools.resourcesbot.export_html`
 ==============================================
 
@@ -48,9 +50,6 @@ Classes
 
       Is there a relevant change for worksheet?
       TODO: Define what exactly we consider relevant (for re-generating that worksheet's HTML)
-
-
-   .. py:method:: make_html_name(self, title: str) -> str
 
 
    .. py:method:: download_file(self, files_folder: str, filename: str) -> bool

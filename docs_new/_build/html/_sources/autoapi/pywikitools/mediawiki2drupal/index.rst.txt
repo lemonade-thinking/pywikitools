@@ -37,33 +37,9 @@ Classes
 
 
 
-Attributes
-~~~~~~~~~~
-
-.. autoapisummary::
-
-   pywikitools.mediawiki2drupal.config
-
-
 .. py:class:: Mediawiki2Drupal(fortraininglib: pywikitools.fortraininglib.ForTrainingLib, endpoint: str, username: str, password: str, content_type: str = 'page', change_hrefs: Dict[str, str] = None, img_src_rewrite: Dict[str, str] = None)
 
    The main class containing all major functionality to import pages from mediawiki into Drupal
-
-   .. py:attribute:: HEADERS
-      :annotation: :Final[Dict[str, str]]
-
-      
-
-   .. py:method:: _process_html(self, input: str, custom_fields: Dict[str, str] = None) -> str
-
-      TODO Start using pywikitools.lib.html.BeautifyHTML
-      TODO Subclass BeautifyHTML and overwrite image_rewrite_handler to add customizations for "hands" images
-      Take the original HTML coming from mediawiki and remove unnecessary tags or attributes.
-
-      If we would request the English originals like fortraininglib.get_page_html("Prayer"),
-      we would need to remove the [edit] sections. But as we request them with
-      fortraininglib.get_page_html("Prayer/en"), we don't have to take care of that anymore
-
 
    .. py:method:: get_page_id(self, search_criteria: Dict[str, str])
 
@@ -83,9 +59,4 @@ Attributes
       @return False on error
 
 
-
-.. py:data:: config
-   
-
-   
 
