@@ -52,7 +52,9 @@ class TranslationProgress:
 
 
 class PdfMetadataSummary:
-    """Read-only data structure with evaluation result of the PDF metadata"""
+    """
+    This class creates read-only data structure with evaluation result of the PDF metadata.
+    """
     __slots__ = ["version", "correct", "pdf1a", "only_docinfo", "warnings"]
 
     def __init__(self, version: str, correct: bool, pdf1a: bool, only_docinfo: bool, warnings: str):
@@ -70,7 +72,16 @@ class PdfMetadataSummary:
         self.warnings: Final[str] = warnings
 
     def to_string(self, include_version: bool) -> str:
-        """Write a human-readable string"""
+        """
+        Write a human-readable string.
+        
+        Args:
+            include_version: Version to be included in the string output.
+
+        Returns:
+            A string of metadata with the version labels.
+        
+        """
         result = f'Metadata: {"correct" if self.correct else "incorrect"}. '
         if include_version:
             result += "Version: {self.version}. "
@@ -82,7 +93,9 @@ class PdfMetadataSummary:
         return result
 
     def to_html(self) -> str:
-        """Write a HTML string (specifically for the use case of the WriteReport plugin)"""
+        """
+        Write a HTML string (specifically for the use case of the WriteReport plugin).
+        """
         result = f'<div title="{self.to_string(False)}">'
         if self.correct:
             result += "✓"
@@ -99,13 +112,20 @@ class PdfMetadataSummary:
 
 class FileInfo:
     """
-    Holds information on one file that is available on the website
-    This shouldn't be modified after creation
+    This class holds information on one file that is available on the website.
+
+    Note:
+        This shouldn't be modified after creation.
     """
     __slots__ = ['file_type', 'url', 'timestamp', 'translation_unit', 'metadata']
 
-    def __init__(self, file_type: str, url: str, timestamp: Union[datetime, str], *,
-                 translation_unit: Optional[int] = None, metadata: Optional[PdfMetadataSummary] = None):
+    def __init__(self,
+                 file_type: str,
+                 url: str,
+                 timestamp: Union[datetime, str],
+                 *,
+                 translation_unit: Optional[int] = None,
+                 metadata: Optional[PdfMetadataSummary] = None):
         """
         @param file_type: e.g. "pdf" (one of fortraininglib.get_file_types())
         @param url: full URL where the file can be downloaded
@@ -142,7 +162,9 @@ class FileInfo:
                 self.timestamp = datetime(1970, 1, 1)
 
     def get_file_name(self) -> str:
-        """Return file name out of url"""
+        """
+        Return the file name out of the url address.
+        """
         pos = self.url.rfind('/')
         if pos > -1:
             return self.url[pos+1:]
@@ -158,8 +180,11 @@ class FileInfo:
 
 
 class WorksheetInfo:
-    """Holds information on one worksheet in one specific language
-    Only for worksheets that are at least partially translated
+    """
+    This class holds information on one worksheet in one specific language.
+
+    Note:
+        Only for worksheets that are at least partially translated.
     """
     __slots__ = ['page', 'language_code', 'title', 'progress', 'version', 'version_unit', '_files']
 
@@ -185,11 +210,16 @@ class WorksheetInfo:
                       from_pywikibot: Optional[pywikibot.page.FileInfo] = None,
                       unit: Optional[int] = None,
                       metadata: Optional[PdfMetadataSummary] = None):
-        """Add information about another file associated with this worksheet.
+        """
+        Add information about another file associated with this worksheet.
+        
         You can call the function in two different ways:
-        - providing file_info
-        - providing file_type and from_pywikibot (and potentially unit and/or metadata)
-        This will log on errors but shouldn't raise exceptions
+            
+            * providing file_info;
+            * providing file_type and from_pywikibot (and potentially unit and/or metadata).
+        
+        Note:
+            This will log on errors but shouldn't raise exceptions.
         """
         if file_info is not None:
             self._files[file_info.file_type] = file_info
@@ -199,15 +229,24 @@ class WorksheetInfo:
                                           translation_unit=unit, metadata=metadata)
 
     def get_file_infos(self) -> Dict[str, FileInfo]:
-        """Returns all available files associated with this worksheet"""
+        """
+        Returns all available files associated with this worksheet.
+        """
         return self._files
 
     def has_file_type(self, file_type: str) -> bool:
-        """Does the worksheet have a file for download (e.g. "pdf")?"""
+        """
+        Does the worksheet have a file for download (e.g. ``pdf``)?
+        """
         return file_type in self._files
 
     def get_file_type_info(self, file_type: str) -> Optional[FileInfo]:
-        """Returns FileInfo of specified type (e.g. "pdf"), None if not existing"""
+        """
+        Returns FileInfo of specified type (e.g. ``pdf``), None if not existing.
+
+        Args:
+            file_type: File-type.
+        """
         if file_type in self._files:
             return self._files[file_type]
         return None
@@ -221,7 +260,10 @@ class WorksheetInfo:
         return ""
 
     def is_incomplete(self) -> bool:
-        """A translation is incomplete if most units are translated but at least one is not translated or fuzzy"""
+        """
+        A translation is considered incomplete if most units are translated
+        but at least one unit is not translated or fuzzy.
+        """
         return self.progress.is_incomplete()
 
     def has_same_version(self, english_info) -> bool:
@@ -243,7 +285,9 @@ class WorksheetInfo:
         return False
 
     def __str__(self) -> str:
-        """For debugging purposes: Format all data as a human-readable string"""
+        """
+        For debugging purposes: Format all data as a human-readable string.
+        """
         content: str = f"{self.page}/{self.language_code}: '{self.title}' with version {self.version}"
         if self.version_unit is not None:
             content += f" (in translation unit {self.version_unit})"
@@ -256,7 +300,10 @@ class WorksheetInfo:
 
 
 class LanguageInfo:
-    """Holds information on all available worksheets in one specific language"""
+    """
+    This class holds information on all available worksheets in one specific language.
+    """
+    
     __slots__ = 'language_code', 'english_name', 'worksheets'
 
     def __init__(self, language_code: str, english_name: str):
@@ -276,18 +323,22 @@ class LanguageInfo:
         return None
 
     def worksheet_has_type(self, name: str, file_type: str) -> bool:
-        """Convienence method combining LanguageInfo.has_worksheet() and WorksheetInfo.has_file_type()"""
+        """
+        A convienence method combining ``LanguageInfo.has_worksheet()`` and ``WorksheetInfo.has_file_type()``.
+        """
         if name in self.worksheets:
             return self.worksheets[name].has_file_type(file_type)
         return False
 
     def compare(self, old) -> ChangeLog:
         """
-        Compare ourselves to another (older) LanguageInfo object: have there been changes / updates?
+        Compare ourselves to another (older) LanguageInfo object: have there been changes or updates?
 
-        In case of NEW_WORKSHEET, no NEW_PDF / NEW_ODT will be emitted (even if files got added)
-        In case of DELETED_WORKSHEET, no DELETED_PDF / DELETED_ODT will be emitted (even if files existed before)
-        @return data structure with all changes
+        In case of ``NEW_WORKSHEET``, no ``NEW_PDF`` / ``NEW_ODT`` will be emitted (even if files got added)
+        In case of ``DELETED_WORKSHEET``, no ``DELETED_PDF`` / ``DELETED_ODT`` will be emitted (even if files existed before).
+        
+        Returns:
+            The data structure with all changes.
         """
         change_log = ChangeLog()
         logger = logging.getLogger('pywikitools.resourcesbot.languageinfo')
@@ -327,7 +378,9 @@ class LanguageInfo:
         return change_log
 
     def list_worksheets_with_missing_pdf(self) -> List[str]:
-        """ Returns a list of worksheets which are translated but are missing the PDF"""
+        """
+        Returns a list of translated worksheets but are missing the PDF.
+        """
         return [worksheet for worksheet in self.worksheets if not self.worksheets[worksheet].has_file_type('pdf')]
 
     def list_incomplete_translations(self) -> List[WorksheetInfo]:
@@ -343,9 +396,11 @@ class LanguageInfo:
 
 def json_decode(data: Dict[str, Any]):
     """
-    Deserializes a JSON-formatted string back into
-    TranslationProgress / FileInfo / WorksheetInfo / LanguageInfo objects.
-    @raises AssertionError if data is malformatted
+    Deserializes a JSON-formatted string back into different objects
+    (``TranslationProgress``, ``FileInfo``, ``WorksheetInfo``, ``LanguageInfo`` objects).
+    
+    Raise:
+        AssertionError if the data is malformatted.
     """
     if "pdf1a" in data:         # PdfMetadataSummary object
         assert "version" in data and "correct" in data and "only_docinfo" in data and "warnings" in data
@@ -390,8 +445,8 @@ def json_decode(data: Dict[str, Any]):
 
 class DataStructureEncoder(json.JSONEncoder):
     """
-    Serializes a LanguageInfo / WorksheetInfo / FileInfo / PdfMetadataSummary / TranslationProgress object
-    into a JSON string
+    Serializes a ``LanguageInfo`` / ``WorksheetInfo`` / ``FileInfo`` / ``PdfMetadataSummary`` / ``TranslationProgress`` object
+    into a JSON string.
     """
     def default(self, obj):
         if isinstance(obj, LanguageInfo):
