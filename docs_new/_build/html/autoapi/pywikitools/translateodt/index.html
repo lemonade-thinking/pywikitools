@@ -1,0 +1,577 @@
+<!doctype html>
+<html class="no-js">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" />
+
+    <meta name="generator" content="sphinx-4.5.0, furo 2022.06.04.1"/>
+        <title>pywikitools.translateodt - pywikidocs 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../../index.html"><div class="brand">pywikidocs 1.0.0 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../../index.html">
+  
+  
+  <span class="sidebar-brand-text">pywikidocs 1.0.0 documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../../search.html" role="search">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../../index.html">API Reference</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 current has-children"><a class="reference internal" href="../index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pywikitools</span></code></a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3 has-children"><a class="reference internal" href="../htmltools/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pywikitools.htmltools</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../htmltools/beautify_html/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pywikitools.htmltools.beautify_html</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../lang/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pywikitools.lang</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../lang/libreoffice_lang/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pywikitools.lang.libreoffice_lang</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lang/native_numerals/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pywikitools.lang.native_numerals</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lang/translated_page/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pywikitools.lang.translated_page</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../pdftools/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pywikitools.pdftools</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../pdftools/metadata/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pywikitools.pdftools.metadata</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../resourcesbot/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pywikitools.resourcesbot</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../resourcesbot/bot/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pywikitools.resourcesbot.bot</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../resourcesbot/changes/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pywikitools.resourcesbot.changes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../resourcesbot/consistency_checks/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pywikitools.resourcesbot.consistency_checks</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../resourcesbot/data_structures/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pywikitools.resourcesbot.data_structures</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../resourcesbot/export_html/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pywikitools.resourcesbot.export_html</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../resourcesbot/export_repository/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pywikitools.resourcesbot.export_repository</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../resourcesbot/post_processing/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pywikitools.resourcesbot.post_processing</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../resourcesbot/write_lists/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pywikitools.resourcesbot.write_lists</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../resourcesbot/write_report/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pywikitools.resourcesbot.write_report</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../test/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pywikitools.test</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../test/test_beautifyhtml/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pywikitools.test.test_beautifyhtml</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../test/test_consistency_checks/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pywikitools.test.test_consistency_checks</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../test/test_correctbot/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pywikitools.test.test_correctbot</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../test/test_data_structures/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pywikitools.test.test_data_structures</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../test/test_fortraininglib/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pywikitools.test.test_fortraininglib</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../test/test_lang/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pywikitools.test.test_lang</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../test/test_native_numerals/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pywikitools.test.test_native_numerals</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../test/test_pdftools_metadata/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pywikitools.test.test_pdftools_metadata</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../test/test_resourcesbot/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pywikitools.test.test_resourcesbot</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../test/test_translated_page/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pywikitools.test.test_translated_page</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../test/test_translateodt/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pywikitools.test.test_translateodt</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../test/test_write_lists/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pywikitools.test.test_write_lists</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../test/test_write_report/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pywikitools.test.test_write_report</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../downloadalltranslations/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pywikitools.downloadalltranslations</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dropboxupload/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pywikitools.dropboxupload</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../fortraininglib/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pywikitools.fortraininglib</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generateodtbot/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pywikitools.generateodtbot</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libreoffice/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pywikitools.libreoffice</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mediawiki2drupal/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pywikitools.mediawiki2drupal</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../resources_bot/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pywikitools.resources_bot</span></code></a></li>
+<li class="toctree-l3 current current-page"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pywikitools.translateodt</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../check_language_directions/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">check_language_directions</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../check_translateodt/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">check_translateodt</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../4training_family/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">4training_family</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../generateodt/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">generateodt</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../correct_bot/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">correct_bot</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../check_for_typos/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">check_for_typos</span></code></a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../correctors/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">correctors</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../correctors/ar/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">correctors.ar</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../correctors/base/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">correctors.base</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../correctors/de/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">correctors.de</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../correctors/en/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">correctors.en</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../correctors/fr/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">correctors.fr</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../correctors/universal/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">correctors.universal</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <div class="section" id="module-pywikitools.translateodt">
+<span id="pywikitools-translateodt"></span><h1><a class="reference internal" href="#module-pywikitools.translateodt" title="pywikitools.translateodt"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pywikitools.translateodt</span></code></a><a class="headerlink" href="#module-pywikitools.translateodt" title="Permalink to this headline">#</a></h1>
+<p>This script produces a translated ODT file for a given worksheet and a given language.
+It does so by:
+1. accessing the worksheet in the mediawiki system together with its translation
+2. downloading the English ODT file (the URL is found in the result of the first step)
+3. doing search and replace: For each translation unit</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>do some cleansing (removing links, unnecessary spaces)</p></li>
+<li><p>split it up even further into small snippets (when the translation unit contains lists etc.)</p></li>
+<li><p>search for each snippet and replace it by its translation</p></li>
+</ul>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li><p>saving the created ODT file</p></li>
+</ol>
+<dl class="simple">
+<dt>It does quite some logging:</dt><dd><ul class="simple">
+<li><p>error level: serious issues where the script had to be aborted</p></li>
+<li><p>warning level: these should be checked afterwards</p></li>
+<li><p>info level: going along what the script does</p></li>
+<li><p>debug level: extensive details for debugging</p></li>
+</ul>
+</dd>
+<dt>Command line options:</dt><dd><p>-h, –help: help message
+-l [debug, info, warning, error]: set loglevel
+–keep-english-file: don’t delete the downloaded English ODT file after we’re finished</p>
+</dd>
+</dl>
+<div class="section" id="module-contents">
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Permalink to this headline">#</a></h2>
+<div class="section" id="classes">
+<h3>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">#</a></h3>
+<div class="table-wrapper autosummary longtable docutils container">
+<table class="autosummary longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywikitools.translateodt.TranslateOdtConfig" title="pywikitools.translateodt.TranslateOdtConfig"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TranslateOdtConfig</span></code></a></p></td>
+<td><p>Contains configuration on how to process one worksheet:</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywikitools.translateodt.TranslateODT" title="pywikitools.translateodt.TranslateODT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TranslateODT</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="attributes">
+<h3>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">#</a></h3>
+<div class="table-wrapper autosummary longtable docutils container">
+<table class="autosummary longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywikitools.translateodt.SNIPPET_WARN_LENGTH" title="pywikitools.translateodt.SNIPPET_WARN_LENGTH"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SNIPPET_WARN_LENGTH</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywikitools.translateodt.IGNORE_TEMPLATES" title="pywikitools.translateodt.IGNORE_TEMPLATES"><code class="xref py py-obj docutils literal notranslate"><span class="pre">IGNORE_TEMPLATES</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywikitools.translateodt.NO_ADD_ENGLISH_VERSION" title="pywikitools.translateodt.NO_ADD_ENGLISH_VERSION"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NO_ADD_ENGLISH_VERSION</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywikitools.translateodt.log_levels" title="pywikitools.translateodt.log_levels"><code class="xref py py-obj docutils literal notranslate"><span class="pre">log_levels</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<dl class="py data">
+<dt class="sig sig-object py" id="pywikitools.translateodt.SNIPPET_WARN_LENGTH">
+<span class="sig-prename descclassname"><span class="pre">pywikitools.translateodt.</span></span><span class="sig-name descname"><span class="pre">SNIPPET_WARN_LENGTH</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">3</span></em><a class="headerlink" href="#pywikitools.translateodt.SNIPPET_WARN_LENGTH" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="pywikitools.translateodt.IGNORE_TEMPLATES">
+<span class="sig-prename descclassname"><span class="pre">pywikitools.translateodt.</span></span><span class="sig-name descname"><span class="pre">IGNORE_TEMPLATES</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">['Template:DocDownload',</span> <span class="pre">'Template:OdtDownload',</span> <span class="pre">'Template:PdfDownload',...</span></em><a class="headerlink" href="#pywikitools.translateodt.IGNORE_TEMPLATES" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="pywikitools.translateodt.NO_ADD_ENGLISH_VERSION">
+<span class="sig-prename descclassname"><span class="pre">pywikitools.translateodt.</span></span><span class="sig-name descname"><span class="pre">NO_ADD_ENGLISH_VERSION</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">['de',</span> <span class="pre">'pt-br',</span> <span class="pre">'cs',</span> <span class="pre">'nl',</span> <span class="pre">'fr',</span> <span class="pre">'id',</span> <span class="pre">'ro',</span> <span class="pre">'es',</span> <span class="pre">'sv',</span> <span class="pre">'tr',</span> <span class="pre">'tr-tanri']</span></em><a class="headerlink" href="#pywikitools.translateodt.NO_ADD_ENGLISH_VERSION" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pywikitools.translateodt.TranslateOdtConfig">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pywikitools.translateodt.</span></span><span class="sig-name descname"><span class="pre">TranslateOdtConfig</span></span><a class="headerlink" href="#pywikitools.translateodt.TranslateOdtConfig" title="Permalink to this definition">#</a></dt>
+<dd><p>Contains configuration on how to process one worksheet:
+Which translation units should be ignored?
+Which translation units should be processed multiple times?</p>
+<p>It is read from a config file (see TranslateODT.read_worksheet_config()) of the following structure:
+[Ignore]
+# Don’t process the following translation units
+Template:BibleReadingHints/18
+Template:BibleReadingHints/25</p>
+<p>[Multiple]
+# Process the following translation unit 5 times
+Template:BibleReadingHints/6 = 5</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pywikitools.translateodt.TranslateOdtConfig.__slots__">
+<span class="sig-name descname"><span class="pre">__slots__</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">['ignore',</span> <span class="pre">'multiple']</span></em><a class="headerlink" href="#pywikitools.translateodt.TranslateOdtConfig.__slots__" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pywikitools.translateodt.TranslateODT">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pywikitools.translateodt.</span></span><span class="sig-name descname"><span class="pre">TranslateODT</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep_english_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywikitools.translateodt.TranslateODT" title="Permalink to this definition">#</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="pywikitools.translateodt.TranslateODT._is_search_and_replace_necessary">
+<span class="sig-name descname"><span class="pre">_is_search_and_replace_necessary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">orig</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trans</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#pywikitools.translateodt.TranslateODT._is_search_and_replace_necessary" title="Permalink to this definition">#</a></dt>
+<dd><p>Checks if we need to do a search and replace or if there are other exceptions
+Logs warnings for certain circumstances
+&#64;return true if we need to do search and replace</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywikitools.translateodt.TranslateODT._process_snippet">
+<span class="sig-name descname"><span class="pre">_process_snippet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">orig</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trans</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywikitools.translateodt.TranslateODT._process_snippet" title="Permalink to this definition">#</a></dt>
+<dd><p>Looks at one snippet, does some preparations and tries to do search and replace
+&#64;param orig the original string (what to search for)
+&#64;param trans the translated string (what we’re going to replace it with)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywikitools.translateodt.TranslateODT._search_and_replace">
+<span class="sig-name descname"><span class="pre">_search_and_replace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">translated_page</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../lang/translated_page/index.html#pywikitools.lang.translated_page.TranslatedPage" title="pywikitools.lang.translated_page.TranslatedPage"><span class="pre">pywikitools.lang.translated_page.TranslatedPage</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywikitools.translateodt.TranslateODT._search_and_replace" title="Permalink to this definition">#</a></dt>
+<dd><p>Go through the whole document, search for original text snippets and replace them
+with the translated text snippets</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywikitools.translateodt.TranslateODT._fetch_english_file">
+<span class="sig-name descname"><span class="pre">_fetch_english_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">odt_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#pywikitools.translateodt.TranslateODT._fetch_english_file" title="Permalink to this definition">#</a></dt>
+<dd><p>Download the specified file from the mediawiki server
+&#64;return full path of the downloaded file (empty string on error)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywikitools.translateodt.TranslateODT._get_odt_filename">
+<span class="sig-name descname"><span class="pre">_get_odt_filename</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">translated_page</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../lang/translated_page/index.html#pywikitools.lang.translated_page.TranslatedPage" title="pywikitools.lang.translated_page.TranslatedPage"><span class="pre">pywikitools.lang.translated_page.TranslatedPage</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#pywikitools.translateodt.TranslateODT._get_odt_filename" title="Permalink to this definition">#</a></dt>
+<dd><p>Create filename from headline of translated page</p>
+<p>E.g. page “Hearing from God” -&gt; “Hearing_from_God.odt”
+Compares it to the translated file name and gives a warning if it doesn’t match</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywikitools.translateodt.TranslateODT._cleanup_units">
+<span class="sig-name descname"><span class="pre">_cleanup_units</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">translated_page</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../lang/translated_page/index.html#pywikitools.lang.translated_page.TranslatedPage" title="pywikitools.lang.translated_page.TranslatedPage"><span class="pre">pywikitools.lang.translated_page.TranslatedPage</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pywikitools.translateodt.TranslateOdtConfig" title="pywikitools.translateodt.TranslateOdtConfig"><span class="pre">TranslateOdtConfig</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../lang/translated_page/index.html#pywikitools.lang.translated_page.TranslatedPage" title="pywikitools.lang.translated_page.TranslatedPage"><span class="pre">pywikitools.lang.translated_page.TranslatedPage</span></a></span></span><a class="headerlink" href="#pywikitools.translateodt.TranslateODT._cleanup_units" title="Permalink to this definition">#</a></dt>
+<dd><p>Clean up translation units before we do search and replace:
+- filter out empty/irrelevant units
+- remove [[links]]
+- remove bold/italic/underline formatting from definition
+- replace ‘’ / ‘’’ with &lt;i&gt; / &lt;b&gt; in translation
+- check order of translation units and rearrange if necessary
+- process config: remove ignored units, replicate units that should be processed multiple times</p>
+<p>We can run into troubles if a we have a short translation snippet that is contained in another snippet
+-&gt; search and replace will likely happen at the wrong place
+Let’s loop through all units and in the case a snippet is contained in anoher one, we’ll move the short
+translation unit to the end: We always try to match long search strings first</p>
+<p>&#64;param config: Instructions on which units should be ignored and which should be processed multiple times
+&#64;return a cleaned up copy TranslatedPage (as in-place manipulation isn’t easily possible)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywikitools.translateodt.TranslateODT.special_sort_units">
+<span class="sig-name descname"><span class="pre">special_sort_units</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">units</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../lang/translated_page/index.html#pywikitools.lang.translated_page.TranslationUnit" title="pywikitools.lang.translated_page.TranslationUnit"><span class="pre">pywikitools.lang.translated_page.TranslationUnit</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pywikitools.translateodt.TranslateODT.special_sort_units" title="Permalink to this definition">#</a></dt>
+<dd><p>Order the TranslationUnits in such a way that units with a short snippet
+(that is part of another one) are moved to the end of the list
+[“long”, “A long sentence”, “long sentence”] -&gt; [“A long sentence”, “long sentence”, “long”]</p>
+<p>Then we first search and replace the long strings, avoiding replacing at the wrong places.
+This is not a “typical” ordering like ordering alphabetically. That’s why we can’t use Python’s sort()
+method but really must compare each element with all other elements. This has O(n^2) complexity
+but for normal use-cases (less than 1000 translation units) that shouldn’t be an issue</p>
+<p>If no snippet contains another one, nothing will be re-ordered
+&#64;param units: The list of translation units will be re-ordered in-place</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywikitools.translateodt.TranslateODT.read_worksheet_config">
+<span class="sig-name descname"><span class="pre">read_worksheet_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">worksheet</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pywikitools.translateodt.TranslateOdtConfig" title="pywikitools.translateodt.TranslateOdtConfig"><span class="pre">TranslateOdtConfig</span></a></span></span><a class="headerlink" href="#pywikitools.translateodt.TranslateODT.read_worksheet_config" title="Permalink to this definition">#</a></dt>
+<dd><p>Read processing configuration for a specific worksheet from the MediaWiki system.
+The config is read from page [worksheet-name].config in the Project namespace
+(example: <a class="reference external" href="https://www.4training.net/4training:Bible_Reading_Hints.config">https://www.4training.net/4training:Bible_Reading_Hints.config</a> ).
+If there is no such config, the two members of the data structure returned will both be empty</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywikitools.translateodt.TranslateODT.translate_odt">
+<span class="sig-name descname"><span class="pre">translate_odt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">odt_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">translated_page</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../lang/translated_page/index.html#pywikitools.lang.translated_page.TranslatedPage" title="pywikitools.lang.translated_page.TranslatedPage"><span class="pre">pywikitools.lang.translated_page.TranslatedPage</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pywikitools.translateodt.TranslateOdtConfig" title="pywikitools.translateodt.TranslateOdtConfig"><span class="pre">TranslateOdtConfig</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pywikitools.translateodt.TranslateODT.translate_odt" title="Permalink to this definition">#</a></dt>
+<dd><p>Open the specified ODT file and replace contents with translation
+&#64;param odt_path: Path of the ODT file
+&#64;param translated_page: Contains all translation units we’ll do search&amp;replace with
+Raises ConnectionError (coming from LibreOffice.open_file) if LibreOffice connection didn’t work</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywikitools.translateodt.TranslateODT.translate_worksheet">
+<span class="sig-name descname"><span class="pre">translate_worksheet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">worksheet</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">language_code</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pywikitools.translateodt.TranslateODT.translate_worksheet" title="Permalink to this definition">#</a></dt>
+<dd><p>Create translated worksheet: Fetch information, download original ODT, process it, save translated ODT
+&#64;param worksheet name of the worksheet (e.g. “Forgiving_Step_by_Step”)
+&#64;param language_code what language we should translate to (e.g. “de”)
+&#64;return file name of the created ODT file (or None in case of error)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywikitools.translateodt.TranslateODT._set_properties">
+<span class="sig-name descname"><span class="pre">_set_properties</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">page</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../lang/translated_page/index.html#pywikitools.lang.translated_page.TranslatedPage" title="pywikitools.lang.translated_page.TranslatedPage"><span class="pre">pywikitools.lang.translated_page.TranslatedPage</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywikitools.translateodt.TranslateODT._set_properties" title="Permalink to this definition">#</a></dt>
+<dd><p>Set the properties of the ODT file</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="pywikitools.translateodt.log_levels">
+<span class="sig-prename descclassname"><span class="pre">pywikitools.translateodt.</span></span><span class="sig-name descname"><span class="pre">log_levels</span></span><em class="property"><span class="w"> </span><span class="pre">:List[str]</span> <span class="pre">=</span> <span class="pre">['debug',</span> <span class="pre">'info',</span> <span class="pre">'warning',</span> <span class="pre">'error']</span></em><a class="headerlink" href="#pywikitools.translateodt.log_levels" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+</div>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2022, 4training
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              
+            </div>
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pywikitools.translateodt</span></code></a><ul>
+<li><a class="reference internal" href="#module-contents">Module Contents</a><ul>
+<li><a class="reference internal" href="#classes">Classes</a></li>
+<li><a class="reference internal" href="#attributes">Attributes</a><ul>
+<li><a class="reference internal" href="#pywikitools.translateodt.SNIPPET_WARN_LENGTH">SNIPPET_WARN_LENGTH</a></li>
+<li><a class="reference internal" href="#pywikitools.translateodt.IGNORE_TEMPLATES">IGNORE_TEMPLATES</a></li>
+<li><a class="reference internal" href="#pywikitools.translateodt.NO_ADD_ENGLISH_VERSION">NO_ADD_ENGLISH_VERSION</a></li>
+<li><a class="reference internal" href="#pywikitools.translateodt.TranslateOdtConfig">TranslateOdtConfig</a><ul>
+<li><a class="reference internal" href="#pywikitools.translateodt.TranslateOdtConfig.__slots__">__slots__</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pywikitools.translateodt.TranslateODT">TranslateODT</a><ul>
+<li><a class="reference internal" href="#pywikitools.translateodt.TranslateODT._is_search_and_replace_necessary">_is_search_and_replace_necessary</a></li>
+<li><a class="reference internal" href="#pywikitools.translateodt.TranslateODT._process_snippet">_process_snippet</a></li>
+<li><a class="reference internal" href="#pywikitools.translateodt.TranslateODT._search_and_replace">_search_and_replace</a></li>
+<li><a class="reference internal" href="#pywikitools.translateodt.TranslateODT._fetch_english_file">_fetch_english_file</a></li>
+<li><a class="reference internal" href="#pywikitools.translateodt.TranslateODT._get_odt_filename">_get_odt_filename</a></li>
+<li><a class="reference internal" href="#pywikitools.translateodt.TranslateODT._cleanup_units">_cleanup_units</a></li>
+<li><a class="reference internal" href="#pywikitools.translateodt.TranslateODT.special_sort_units">special_sort_units</a></li>
+<li><a class="reference internal" href="#pywikitools.translateodt.TranslateODT.read_worksheet_config">read_worksheet_config</a></li>
+<li><a class="reference internal" href="#pywikitools.translateodt.TranslateODT.translate_odt">translate_odt</a></li>
+<li><a class="reference internal" href="#pywikitools.translateodt.TranslateODT.translate_worksheet">translate_worksheet</a></li>
+<li><a class="reference internal" href="#pywikitools.translateodt.TranslateODT._set_properties">_set_properties</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pywikitools.translateodt.log_levels">log_levels</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/scripts/furo.js"></script>
+    </body>
+</html>
