@@ -266,6 +266,21 @@ class WorksheetInfo:
         """
         return self.progress.is_incomplete()
 
+    def show_in_list(self, english_info) -> bool:
+        """Should this worksheet be listed in the language information page?
+
+        A worksheet will be included in the list of available resources if it has a PDF
+        and if it has the same major version as the English original
+        Examples:
+            English original: version 2.2; translation: 2.0 -> yes
+            English original: version 2.0; translation: 1.3b -> no
+
+        Args:
+            english_info (WorksheetInfo): Information on the English original worksheet
+        """
+        assert isinstance(english_info, WorksheetInfo)
+        return self.has_file_type("pdf") and self.has_same_version(english_info, check_only_major_version=True)
+
     def has_same_version(self, english_info) -> bool:
         """
         Compare our version string with the version string of the English original: is it the same?
