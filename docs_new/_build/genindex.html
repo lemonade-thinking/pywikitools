@@ -1,0 +1,1444 @@
+<!doctype html>
+<html class="no-js">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="#" /><link rel="search" title="Search" href="search.html" />
+
+    <meta name="generator" content="sphinx-4.5.0, furo 2022.06.04.1"/><title>Index - pywikidocs 1.0.0 documentation</title>
+<link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="index.html"><div class="brand">pywikidocs 1.0.0 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
+  
+  
+  <span class="sidebar-brand-text">pywikidocs 1.0.0 documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="autoapi/index.html">API Reference</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="autoapi/pywikitools/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pywikitools</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="autoapi/pywikitools/downloadalltranslations/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pywikitools.downloadalltranslations</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="autoapi/pywikitools/dropboxupload/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pywikitools.dropboxupload</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="autoapi/pywikitools/fortraininglib/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pywikitools.fortraininglib</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="autoapi/pywikitools/generateodtbot/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pywikitools.generateodtbot</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="autoapi/pywikitools/mediawiki2drupal/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pywikitools.mediawiki2drupal</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="autoapi/pywikitools/resources_bot/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pywikitools.resources_bot</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="autoapi/pywikitools/translateodt/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pywikitools.translateodt</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="autoapi/check_language_directions/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">check_language_directions</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="autoapi/check_translateodt/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">check_translateodt</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="autoapi/4training_family/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">4training_family</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="autoapi/generateodt/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">generateodt</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="autoapi/correct_bot/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">correct_bot</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="autoapi/check_for_typos/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">check_for_typos</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          
+<section class="genindex-section">
+  <h1 id="index">Index</h1>
+  <div class="genindex-jumpbox"><a href="#Symbols"><strong>Symbols</strong></a> | <a href="#A"><strong>A</strong></a> | <a href="#B"><strong>B</strong></a> | <a href="#C"><strong>C</strong></a> | <a href="#D"><strong>D</strong></a> | <a href="#E"><strong>E</strong></a> | <a href="#F"><strong>F</strong></a> | <a href="#G"><strong>G</strong></a> | <a href="#H"><strong>H</strong></a> | <a href="#I"><strong>I</strong></a> | <a href="#J"><strong>J</strong></a> | <a href="#L"><strong>L</strong></a> | <a href="#M"><strong>M</strong></a> | <a href="#N"><strong>N</strong></a> | <a href="#O"><strong>O</strong></a> | <a href="#P"><strong>P</strong></a> | <a href="#R"><strong>R</strong></a> | <a href="#S"><strong>S</strong></a> | <a href="#T"><strong>T</strong></a> | <a href="#U"><strong>U</strong></a> | <a href="#W"><strong>W</strong></a></div>
+</section>
+<section id="Symbols" class="genindex-section">
+  <h2>Symbols</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li>
+    4training_family
+
+        <ul>
+          <li><a href="autoapi/4training_family/index.html#module-4training_family">module</a>
+</li>
+        </ul></li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="A" class="genindex-section">
+  <h2>A</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="autoapi/pywikitools/resourcesbot/data_structures/index.html#pywikitools.resourcesbot.data_structures.WorksheetInfo.add_file_info">add_file_info() (pywikitools.resourcesbot.data_structures.WorksheetInfo method)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="autoapi/pywikitools/lang/translated_page/index.html#pywikitools.lang.translated_page.TranslatedPage.add_translation_unit">add_translation_unit() (pywikitools.lang.translated_page.TranslatedPage method)</a>
+</li>
+        <li><a href="autoapi/correctors/ar/index.html#correctors.ar.ArabicCorrector">ArabicCorrector (class in correctors.ar)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="B" class="genindex-section">
+  <h2>B</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="autoapi/pywikitools/htmltools/beautify_html/index.html#pywikitools.htmltools.beautify_html.BeautifyHTML">BeautifyHTML (class in pywikitools.htmltools.beautify_html)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="C" class="genindex-section">
+  <h2>C</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="autoapi/pywikitools/resourcesbot/changes/index.html#pywikitools.resourcesbot.changes.ChangeItem">ChangeItem (class in pywikitools.resourcesbot.changes)</a>
+</li>
+        <li><a href="autoapi/pywikitools/resourcesbot/changes/index.html#pywikitools.resourcesbot.changes.ChangeLog">ChangeLog (class in pywikitools.resourcesbot.changes)</a>
+</li>
+        <li><a href="autoapi/pywikitools/resourcesbot/changes/index.html#pywikitools.resourcesbot.changes.ChangeType">ChangeType (class in pywikitools.resourcesbot.changes)</a>
+</li>
+        <li><a href="autoapi/pywikitools/resourcesbot/consistency_checks/index.html#pywikitools.resourcesbot.consistency_checks.ConsistencyCheck.check_bible_reading_hints_links">check_bible_reading_hints_links() (pywikitools.resourcesbot.consistency_checks.ConsistencyCheck method)</a>
+</li>
+        <li><a href="autoapi/pywikitools/resourcesbot/consistency_checks/index.html#pywikitools.resourcesbot.consistency_checks.ConsistencyCheck.check_bible_reading_hints_titles">check_bible_reading_hints_titles() (pywikitools.resourcesbot.consistency_checks.ConsistencyCheck method)</a>
+</li>
+        <li><a href="autoapi/pywikitools/resourcesbot/consistency_checks/index.html#pywikitools.resourcesbot.consistency_checks.ConsistencyCheck.check_book_of_acts">check_book_of_acts() (pywikitools.resourcesbot.consistency_checks.ConsistencyCheck method)</a>
+</li>
+        <li>
+    check_for_typos
+
+        <ul>
+          <li><a href="autoapi/check_for_typos/index.html#module-check_for_typos">module</a>
+</li>
+        </ul></li>
+        <li><a href="autoapi/pywikitools/resourcesbot/consistency_checks/index.html#pywikitools.resourcesbot.consistency_checks.ConsistencyCheck.check_gods_story_titles">check_gods_story_titles() (pywikitools.resourcesbot.consistency_checks.ConsistencyCheck method)</a>
+</li>
+        <li>
+    check_language_directions
+
+        <ul>
+          <li><a href="autoapi/check_language_directions/index.html#module-check_language_directions">module</a>
+</li>
+        </ul></li>
+        <li><a href="autoapi/pywikitools/pdftools/metadata/index.html#pywikitools.pdftools.metadata.check_metadata">check_metadata() (in module pywikitools.pdftools.metadata)</a>
+</li>
+        <li><a href="autoapi/correct_bot/index.html#correct_bot.CorrectBot.check_page">check_page() (correct_bot.CorrectBot method)</a>
+</li>
+        <li>
+    check_translateodt
+
+        <ul>
+          <li><a href="autoapi/check_translateodt/index.html#module-check_translateodt">module</a>
+</li>
+        </ul></li>
+        <li><a href="autoapi/correct_bot/index.html#correct_bot.CorrectBot.check_unit">check_unit() (correct_bot.CorrectBot method)</a>
+</li>
+        <li><a href="autoapi/pywikitools/resourcesbot/consistency_checks/index.html#pywikitools.resourcesbot.consistency_checks.ConsistencyCheck.check_who_do_i_need_to_forgive">check_who_do_i_need_to_forgive() (pywikitools.resourcesbot.consistency_checks.ConsistencyCheck method)</a>
+</li>
+        <li><a href="autoapi/check_translateodt/index.html#check_translateodt.DummyLibreOffice.close">close() (check_translateodt.DummyLibreOffice method)</a>
+
+        <ul>
+          <li><a href="autoapi/pywikitools/libreoffice/index.html#pywikitools.libreoffice.LibreOffice.close">(pywikitools.libreoffice.LibreOffice method)</a>
+</li>
+        </ul></li>
+        <li><a href="autoapi/pywikitools/resourcesbot/write_report/index.html#pywikitools.resourcesbot.write_report.Color">Color (class in pywikitools.resourcesbot.write_report)</a>
+</li>
+        <li><a href="autoapi/pywikitools/resourcesbot/data_structures/index.html#pywikitools.resourcesbot.data_structures.LanguageInfo.compare">compare() (pywikitools.resourcesbot.data_structures.LanguageInfo method)</a>
+</li>
+        <li><a href="autoapi/pywikitools/test/test_correctbot/index.html#pywikitools.test.test_correctbot.CorrectorTestCase.compare_filename_revisions">compare_filename_revisions() (pywikitools.test.test_correctbot.CorrectorTestCase method)</a>
+</li>
+        <li><a href="autoapi/pywikitools/test/test_correctbot/index.html#pywikitools.test.test_correctbot.CorrectorTestCase.compare_revisions">compare_revisions() (pywikitools.test.test_correctbot.CorrectorTestCase method)</a>
+</li>
+        <li><a href="autoapi/pywikitools/test/test_correctbot/index.html#pywikitools.test.test_correctbot.CorrectorTestCase.compare_title_revisions">compare_title_revisions() (pywikitools.test.test_correctbot.CorrectorTestCase method)</a>
+</li>
+        <li><a href="autoapi/pywikitools/resourcesbot/consistency_checks/index.html#pywikitools.resourcesbot.consistency_checks.ConsistencyCheck">ConsistencyCheck (class in pywikitools.resourcesbot.consistency_checks)</a>
+</li>
+        <li><a href="autoapi/correctors/base/index.html#correctors.base.CorrectorBase.correct">correct() (correctors.base.CorrectorBase method)</a>
+
+        <ul>
+          <li><a href="autoapi/pywikitools/test/test_correctbot/index.html#pywikitools.test.test_correctbot.correct">(in module pywikitools.test.test_correctbot)</a>
+</li>
+        </ul></li>
+        <li>
+    correct_bot
+
+        <ul>
+          <li><a href="autoapi/correct_bot/index.html#module-correct_bot">module</a>
+</li>
+        </ul></li>
+        <li><a href="autoapi/correctors/fr/index.html#correctors.fr.FrenchCorrector.correct_false_friends">correct_false_friends() (correctors.fr.FrenchCorrector method)</a>
+</li>
+        <li><a href="autoapi/correctors/universal/index.html#correctors.universal.UniversalCorrector.correct_mediawiki_bold_italic">correct_mediawiki_bold_italic() (correctors.universal.UniversalCorrector method)</a>
+</li>
+        <li><a href="autoapi/correctors/universal/index.html#correctors.universal.UniversalCorrector.correct_missing_final_dot">correct_missing_final_dot() (correctors.universal.UniversalCorrector method)</a>
+</li>
+        <li><a href="autoapi/correctors/universal/index.html#correctors.universal.UniversalCorrector.correct_missing_spaces">correct_missing_spaces() (correctors.universal.UniversalCorrector method)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="autoapi/correctors/universal/index.html#correctors.universal.UniversalCorrector.correct_multiple_spaces_also_in_title">correct_multiple_spaces_also_in_title() (correctors.universal.UniversalCorrector method)</a>
+</li>
+        <li><a href="autoapi/correctors/universal/index.html#correctors.universal.NoSpaceBeforePunctuationCorrector.correct_no_spaces_before_punctuation">correct_no_spaces_before_punctuation() (correctors.universal.NoSpaceBeforePunctuationCorrector method)</a>
+</li>
+        <li><a href="autoapi/correctors/ar/index.html#correctors.ar.ArabicCorrector.correct_punctuation">correct_punctuation() (correctors.ar.ArabicCorrector method)</a>
+</li>
+        <li><a href="autoapi/correctors/fr/index.html#correctors.fr.FrenchCorrector.correct_quotation_marks">correct_quotation_marks() (correctors.fr.FrenchCorrector method)</a>
+</li>
+        <li><a href="autoapi/correctors/de/index.html#correctors.de.GermanCorrector.correct_quotes">correct_quotes() (correctors.de.GermanCorrector method)</a>
+</li>
+        <li><a href="autoapi/correctors/en/index.html#correctors.en.EnglishCorrector.correct_single_apostrophe">correct_single_apostrophe() (correctors.en.EnglishCorrector method)</a>
+</li>
+        <li><a href="autoapi/correctors/universal/index.html#correctors.universal.UniversalCorrector.correct_spaces_before_comma_and_dot">correct_spaces_before_comma_and_dot() (correctors.universal.UniversalCorrector method)</a>
+</li>
+        <li><a href="autoapi/correctors/fr/index.html#correctors.fr.FrenchCorrector.correct_spaces_before_punctuation">correct_spaces_before_punctuation() (correctors.fr.FrenchCorrector method)</a>
+</li>
+        <li><a href="autoapi/correctors/universal/index.html#correctors.universal.UniversalCorrector.correct_wrong_capitalization">correct_wrong_capitalization() (correctors.universal.UniversalCorrector method)</a>
+</li>
+        <li><a href="autoapi/correctors/universal/index.html#correctors.universal.UniversalCorrector.correct_wrong_dash_also_in_title">correct_wrong_dash_also_in_title() (correctors.universal.UniversalCorrector method)</a>
+</li>
+        <li><a href="autoapi/correctors/universal/index.html#correctors.universal.RTLCorrector.correct_wrong_spaces_in_rtl">correct_wrong_spaces_in_rtl() (correctors.universal.RTLCorrector method)</a>
+</li>
+        <li><a href="autoapi/correct_bot/index.html#correct_bot.CorrectBot">CorrectBot (class in correct_bot)</a>
+</li>
+        <li><a href="autoapi/correctors/base/index.html#correctors.base.CorrectionResult">CorrectionResult (class in correctors.base)</a>
+</li>
+        <li><a href="autoapi/correctors/base/index.html#correctors.base.CorrectorBase">CorrectorBase (class in correctors.base)</a>
+</li>
+        <li>
+    correctors
+
+        <ul>
+          <li><a href="autoapi/correctors/index.html#module-correctors">module</a>
+</li>
+        </ul></li>
+        <li>
+    correctors.ar
+
+        <ul>
+          <li><a href="autoapi/correctors/ar/index.html#module-correctors.ar">module</a>
+</li>
+        </ul></li>
+        <li>
+    correctors.base
+
+        <ul>
+          <li><a href="autoapi/correctors/base/index.html#module-correctors.base">module</a>
+</li>
+        </ul></li>
+        <li>
+    correctors.de
+
+        <ul>
+          <li><a href="autoapi/correctors/de/index.html#module-correctors.de">module</a>
+</li>
+        </ul></li>
+        <li>
+    correctors.en
+
+        <ul>
+          <li><a href="autoapi/correctors/en/index.html#module-correctors.en">module</a>
+</li>
+        </ul></li>
+        <li>
+    correctors.fr
+
+        <ul>
+          <li><a href="autoapi/correctors/fr/index.html#module-correctors.fr">module</a>
+</li>
+        </ul></li>
+        <li>
+    correctors.universal
+
+        <ul>
+          <li><a href="autoapi/correctors/universal/index.html#module-correctors.universal">module</a>
+</li>
+        </ul></li>
+        <li><a href="autoapi/pywikitools/test/test_correctbot/index.html#pywikitools.test.test_correctbot.CorrectorTestCase">CorrectorTestCase (class in pywikitools.test.test_correctbot)</a>
+</li>
+        <li><a href="autoapi/pywikitools/resourcesbot/write_lists/index.html#pywikitools.resourcesbot.write_lists.WriteList.create_mediawiki">create_mediawiki() (pywikitools.resourcesbot.write_lists.WriteList method)</a>
+
+        <ul>
+          <li><a href="autoapi/pywikitools/resourcesbot/write_report/index.html#pywikitools.resourcesbot.write_report.WriteReport.create_mediawiki">(pywikitools.resourcesbot.write_report.WriteReport method)</a>
+</li>
+        </ul></li>
+        <li><a href="autoapi/pywikitools/resourcesbot/write_report/index.html#pywikitools.resourcesbot.write_report.WriteReport.create_worksheet_line">create_worksheet_line() (pywikitools.resourcesbot.write_report.WriteReport method)</a>
+</li>
+        <li><a href="autoapi/pywikitools/resourcesbot/write_report/index.html#pywikitools.resourcesbot.write_report.WriteReport.create_worksheet_overview">create_worksheet_overview() (pywikitools.resourcesbot.write_report.WriteReport method)</a>
+</li>
+        <li><a href="autoapi/pywikitools/resourcesbot/export_html/index.html#pywikitools.resourcesbot.export_html.CustomBeautifyHTML">CustomBeautifyHTML (class in pywikitools.resourcesbot.export_html)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="D" class="genindex-section">
+  <h2>D</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="autoapi/pywikitools/resourcesbot/data_structures/index.html#pywikitools.resourcesbot.data_structures.DataStructureEncoder">DataStructureEncoder (class in pywikitools.resourcesbot.data_structures)</a>
+</li>
+        <li><a href="autoapi/pywikitools/resourcesbot/data_structures/index.html#pywikitools.resourcesbot.data_structures.DataStructureEncoder.default">default() (pywikitools.resourcesbot.data_structures.DataStructureEncoder method)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="autoapi/pywikitools/resourcesbot/export_html/index.html#pywikitools.resourcesbot.export_html.ExportHTML.download_file">download_file() (pywikitools.resourcesbot.export_html.ExportHTML method)</a>
+</li>
+        <li><a href="autoapi/check_translateodt/index.html#check_translateodt.DummyLibreOffice">DummyLibreOffice (class in check_translateodt)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="E" class="genindex-section">
+  <h2>E</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="autoapi/correct_bot/index.html#correct_bot.CorrectBot.empty_job_queue">empty_job_queue() (correct_bot.CorrectBot method)</a>
+</li>
+        <li><a href="autoapi/correctors/en/index.html#correctors.en.EnglishCorrector">EnglishCorrector (class in correctors.en)</a>
+</li>
+        <li><a href="autoapi/check_translateodt/index.html#check_translateodt.DummyLibreOffice.export_pdf">export_pdf() (check_translateodt.DummyLibreOffice method)</a>
+
+        <ul>
+          <li><a href="autoapi/pywikitools/libreoffice/index.html#pywikitools.libreoffice.LibreOffice.export_pdf">(pywikitools.libreoffice.LibreOffice method)</a>
+</li>
+        </ul></li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="autoapi/pywikitools/resourcesbot/export_html/index.html#pywikitools.resourcesbot.export_html.ExportHTML">ExportHTML (class in pywikitools.resourcesbot.export_html)</a>
+</li>
+        <li><a href="autoapi/pywikitools/resourcesbot/export_repository/index.html#pywikitools.resourcesbot.export_repository.ExportRepository">ExportRepository (class in pywikitools.resourcesbot.export_repository)</a>
+</li>
+        <li><a href="autoapi/pywikitools/resourcesbot/consistency_checks/index.html#pywikitools.resourcesbot.consistency_checks.ConsistencyCheck.extract_link">extract_link() (pywikitools.resourcesbot.consistency_checks.ConsistencyCheck method)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="F" class="genindex-section">
+  <h2>F</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="autoapi/4training_family/index.html#training_family.Family">Family (class in 4training_family)</a>
+</li>
+        <li><a href="autoapi/pywikitools/resourcesbot/data_structures/index.html#pywikitools.resourcesbot.data_structures.FileInfo">FileInfo (class in pywikitools.resourcesbot.data_structures)</a>
+</li>
+        <li><a href="autoapi/correctors/base/index.html#correctors.base.CorrectorBase.filename_correct">filename_correct() (correctors.base.CorrectorBase method)</a>
+
+        <ul>
+          <li><a href="autoapi/pywikitools/test/test_correctbot/index.html#pywikitools.test.test_correctbot.filename_correct">(in module pywikitools.test.test_correctbot)</a>
+</li>
+        </ul></li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="autoapi/correctors/universal/index.html#correctors.universal.RTLCorrector.fix_rtl_filename">fix_rtl_filename() (correctors.universal.RTLCorrector method)</a>
+</li>
+        <li><a href="autoapi/correctors/universal/index.html#correctors.universal.RTLCorrector.fix_rtl_title">fix_rtl_title() (correctors.universal.RTLCorrector method)</a>
+</li>
+        <li><a href="autoapi/pywikitools/lang/libreoffice_lang/index.html#pywikitools.lang.libreoffice_lang.FontType">FontType (class in pywikitools.lang.libreoffice_lang)</a>
+</li>
+        <li><a href="autoapi/correctors/fr/index.html#correctors.fr.FrenchCorrector">FrenchCorrector (class in correctors.fr)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="G" class="genindex-section">
+  <h2>G</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li>
+    generateodt
+
+        <ul>
+          <li><a href="autoapi/generateodt/index.html#module-generateodt">module</a>
+</li>
+        </ul></li>
+        <li><a href="autoapi/correctors/de/index.html#correctors.de.GermanCorrector">GermanCorrector (class in correctors.de)</a>
+</li>
+        <li><a href="autoapi/correct_bot/index.html#correct_bot.CorrectBot.get_correction_counter">get_correction_counter() (correct_bot.CorrectBot method)</a>
+</li>
+        <li><a href="autoapi/correct_bot/index.html#correct_bot.CorrectBot.get_correction_diff">get_correction_diff() (correct_bot.CorrectBot method)</a>
+</li>
+        <li><a href="autoapi/correct_bot/index.html#correct_bot.CorrectBot.get_correction_stats">get_correction_stats() (correct_bot.CorrectBot method)</a>
+</li>
+        <li><a href="autoapi/pywikitools/lang/libreoffice_lang/index.html#pywikitools.lang.libreoffice_lang.Lang.get_custom_font">get_custom_font() (pywikitools.lang.libreoffice_lang.Lang method)</a>
+</li>
+        <li><a href="autoapi/pywikitools/resourcesbot/bot/index.html#pywikitools.resourcesbot.bot.ResourcesBot.get_english_version">get_english_version() (pywikitools.resourcesbot.bot.ResourcesBot method)</a>
+</li>
+        <li><a href="autoapi/pywikitools/resourcesbot/data_structures/index.html#pywikitools.resourcesbot.data_structures.WorksheetInfo.get_file_infos">get_file_infos() (pywikitools.resourcesbot.data_structures.WorksheetInfo method)</a>
+</li>
+        <li><a href="autoapi/pywikitools/resourcesbot/data_structures/index.html#pywikitools.resourcesbot.data_structures.FileInfo.get_file_name">get_file_name() (pywikitools.resourcesbot.data_structures.FileInfo method)</a>
+</li>
+        <li><a href="autoapi/pywikitools/resourcesbot/data_structures/index.html#pywikitools.resourcesbot.data_structures.WorksheetInfo.get_file_type_info">get_file_type_info() (pywikitools.resourcesbot.data_structures.WorksheetInfo method)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="autoapi/pywikitools/resourcesbot/data_structures/index.html#pywikitools.resourcesbot.data_structures.WorksheetInfo.get_file_type_name">get_file_type_name() (pywikitools.resourcesbot.data_structures.WorksheetInfo method)</a>
+</li>
+        <li><a href="autoapi/pywikitools/lang/translated_page/index.html#pywikitools.lang.translated_page.TranslationUnit.get_original_translation">get_original_translation() (pywikitools.lang.translated_page.TranslationUnit method)</a>
+</li>
+        <li><a href="autoapi/pywikitools/mediawiki2drupal/index.html#pywikitools.mediawiki2drupal.Mediawiki2Drupal.get_page_id">get_page_id() (pywikitools.mediawiki2drupal.Mediawiki2Drupal method)</a>
+</li>
+        <li><a href="autoapi/check_translateodt/index.html#check_translateodt.DummyLibreOffice.get_properties_subject">get_properties_subject() (check_translateodt.DummyLibreOffice method)</a>
+
+        <ul>
+          <li><a href="autoapi/pywikitools/libreoffice/index.html#pywikitools.libreoffice.LibreOffice.get_properties_subject">(pywikitools.libreoffice.LibreOffice method)</a>
+</li>
+        </ul></li>
+        <li><a href="autoapi/correct_bot/index.html#correct_bot.CorrectBot.get_suggestion_counter">get_suggestion_counter() (correct_bot.CorrectBot method)</a>
+</li>
+        <li><a href="autoapi/correct_bot/index.html#correct_bot.CorrectBot.get_suggestion_diff">get_suggestion_diff() (correct_bot.CorrectBot method)</a>
+</li>
+        <li><a href="autoapi/correct_bot/index.html#correct_bot.CorrectBot.get_suggestion_stats">get_suggestion_stats() (correct_bot.CorrectBot method)</a>
+</li>
+        <li><a href="autoapi/pywikitools/lang/translated_page/index.html#pywikitools.lang.translated_page.TranslationUnit.get_translation">get_translation() (pywikitools.lang.translated_page.TranslationUnit method)</a>
+</li>
+        <li><a href="autoapi/pywikitools/lang/translated_page/index.html#pywikitools.lang.translated_page.TranslationUnit.get_translation_diff">get_translation_diff() (pywikitools.lang.translated_page.TranslationUnit method)</a>
+</li>
+        <li><a href="autoapi/pywikitools/resourcesbot/post_processing/index.html#pywikitools.resourcesbot.post_processing.GlobalPostProcessor">GlobalPostProcessor (class in pywikitools.resourcesbot.post_processing)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="H" class="genindex-section">
+  <h2>H</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="autoapi/pywikitools/resourcesbot/data_structures/index.html#pywikitools.resourcesbot.data_structures.WorksheetInfo.has_file_type">has_file_type() (pywikitools.resourcesbot.data_structures.WorksheetInfo method)</a>
+</li>
+        <li><a href="autoapi/pywikitools/resourcesbot/export_html/index.html#pywikitools.resourcesbot.export_html.ExportHTML.has_relevant_change">has_relevant_change() (pywikitools.resourcesbot.export_html.ExportHTML method)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="autoapi/pywikitools/resourcesbot/data_structures/index.html#pywikitools.resourcesbot.data_structures.WorksheetInfo.has_same_version">has_same_version() (pywikitools.resourcesbot.data_structures.WorksheetInfo method)</a>
+</li>
+        <li><a href="autoapi/pywikitools/lang/translated_page/index.html#pywikitools.lang.translated_page.TranslationUnit.has_translation_changes">has_translation_changes() (pywikitools.lang.translated_page.TranslationUnit method)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="I" class="genindex-section">
+  <h2>I</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="autoapi/pywikitools/htmltools/beautify_html/index.html#pywikitools.htmltools.beautify_html.BeautifyHTML.img_rewrite_handler">img_rewrite_handler() (pywikitools.htmltools.beautify_html.BeautifyHTML method)</a>
+
+        <ul>
+          <li><a href="autoapi/pywikitools/resourcesbot/export_html/index.html#pywikitools.resourcesbot.export_html.CustomBeautifyHTML.img_rewrite_handler">(pywikitools.resourcesbot.export_html.CustomBeautifyHTML method)</a>
+</li>
+        </ul></li>
+        <li><a href="autoapi/pywikitools/mediawiki2drupal/index.html#pywikitools.mediawiki2drupal.Mediawiki2Drupal.import_page">import_page() (pywikitools.mediawiki2drupal.Mediawiki2Drupal method)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="autoapi/pywikitools/resourcesbot/data_structures/index.html#pywikitools.resourcesbot.data_structures.WorksheetInfo.is_incomplete">is_incomplete() (pywikitools.resourcesbot.data_structures.WorksheetInfo method)</a>
+</li>
+        <li><a href="autoapi/pywikitools/lang/translated_page/index.html#pywikitools.lang.translated_page.TranslationUnit.is_title">is_title() (pywikitools.lang.translated_page.TranslationUnit method)</a>
+</li>
+        <li><a href="autoapi/pywikitools/lang/translated_page/index.html#pywikitools.lang.translated_page.TranslationUnit.is_translation_well_structured">is_translation_well_structured() (pywikitools.lang.translated_page.TranslationUnit method)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="J" class="genindex-section">
+  <h2>J</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="autoapi/pywikitools/resourcesbot/data_structures/index.html#pywikitools.resourcesbot.data_structures.json_decode">json_decode() (in module pywikitools.resourcesbot.data_structures)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="L" class="genindex-section">
+  <h2>L</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="autoapi/pywikitools/lang/libreoffice_lang/index.html#pywikitools.lang.libreoffice_lang.Lang">Lang (class in pywikitools.lang.libreoffice_lang)</a>
+</li>
+        <li><a href="autoapi/pywikitools/resourcesbot/data_structures/index.html#pywikitools.resourcesbot.data_structures.LanguageInfo">LanguageInfo (class in pywikitools.resourcesbot.data_structures)</a>
+</li>
+        <li><a href="autoapi/pywikitools/resourcesbot/post_processing/index.html#pywikitools.resourcesbot.post_processing.LanguagePostProcessor">LanguagePostProcessor (class in pywikitools.resourcesbot.post_processing)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="autoapi/pywikitools/libreoffice/index.html#pywikitools.libreoffice.LibreOffice">LibreOffice (class in pywikitools.libreoffice)</a>
+</li>
+        <li><a href="autoapi/pywikitools/resourcesbot/data_structures/index.html#pywikitools.resourcesbot.data_structures.LanguageInfo.list_worksheets_with_missing_pdf">list_worksheets_with_missing_pdf() (pywikitools.resourcesbot.data_structures.LanguageInfo method)</a>
+</li>
+        <li><a href="autoapi/pywikitools/resourcesbot/consistency_checks/index.html#pywikitools.resourcesbot.consistency_checks.ConsistencyCheck.load_translation_unit">load_translation_unit() (pywikitools.resourcesbot.consistency_checks.ConsistencyCheck method)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="M" class="genindex-section">
+  <h2>M</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="autoapi/correctors/universal/index.html#correctors.universal.UniversalCorrector.make_lowercase_extension_in_filename">make_lowercase_extension_in_filename() (correctors.universal.UniversalCorrector method)</a>
+</li>
+        <li><a href="autoapi/pywikitools/mediawiki2drupal/index.html#pywikitools.mediawiki2drupal.Mediawiki2Drupal">Mediawiki2Drupal (class in pywikitools.mediawiki2drupal)</a>
+</li>
+        <li><a href="autoapi/pywikitools/test/test_pdftools_metadata/index.html#pywikitools.test.test_pdftools_metadata.TestPdfMetadata.mock_get_language_name">mock_get_language_name() (pywikitools.test.test_pdftools_metadata.TestPdfMetadata static method)</a>
+</li>
+        <li>
+    module
+
+        <ul>
+          <li><a href="autoapi/4training_family/index.html#module-4training_family">4training_family</a>
+</li>
+          <li><a href="autoapi/check_for_typos/index.html#module-check_for_typos">check_for_typos</a>
+</li>
+          <li><a href="autoapi/check_language_directions/index.html#module-check_language_directions">check_language_directions</a>
+</li>
+          <li><a href="autoapi/check_translateodt/index.html#module-check_translateodt">check_translateodt</a>
+</li>
+          <li><a href="autoapi/correct_bot/index.html#module-correct_bot">correct_bot</a>
+</li>
+          <li><a href="autoapi/correctors/index.html#module-correctors">correctors</a>
+</li>
+          <li><a href="autoapi/correctors/ar/index.html#module-correctors.ar">correctors.ar</a>
+</li>
+          <li><a href="autoapi/correctors/base/index.html#module-correctors.base">correctors.base</a>
+</li>
+          <li><a href="autoapi/correctors/de/index.html#module-correctors.de">correctors.de</a>
+</li>
+          <li><a href="autoapi/correctors/en/index.html#module-correctors.en">correctors.en</a>
+</li>
+          <li><a href="autoapi/correctors/fr/index.html#module-correctors.fr">correctors.fr</a>
+</li>
+          <li><a href="autoapi/correctors/universal/index.html#module-correctors.universal">correctors.universal</a>
+</li>
+          <li><a href="autoapi/generateodt/index.html#module-generateodt">generateodt</a>
+</li>
+          <li><a href="autoapi/pywikitools/index.html#module-pywikitools">pywikitools</a>
+</li>
+          <li><a href="autoapi/pywikitools/downloadalltranslations/index.html#module-pywikitools.downloadalltranslations">pywikitools.downloadalltranslations</a>
+</li>
+          <li><a href="autoapi/pywikitools/dropboxupload/index.html#module-pywikitools.dropboxupload">pywikitools.dropboxupload</a>
+</li>
+          <li><a href="autoapi/pywikitools/fortraininglib/index.html#module-pywikitools.fortraininglib">pywikitools.fortraininglib</a>
+</li>
+          <li><a href="autoapi/pywikitools/generateodtbot/index.html#module-pywikitools.generateodtbot">pywikitools.generateodtbot</a>
+</li>
+          <li><a href="autoapi/pywikitools/htmltools/index.html#module-pywikitools.htmltools">pywikitools.htmltools</a>
+</li>
+          <li><a href="autoapi/pywikitools/htmltools/beautify_html/index.html#module-pywikitools.htmltools.beautify_html">pywikitools.htmltools.beautify_html</a>
+</li>
+          <li><a href="autoapi/pywikitools/lang/index.html#module-pywikitools.lang">pywikitools.lang</a>
+</li>
+          <li><a href="autoapi/pywikitools/lang/libreoffice_lang/index.html#module-pywikitools.lang.libreoffice_lang">pywikitools.lang.libreoffice_lang</a>
+</li>
+          <li><a href="autoapi/pywikitools/lang/native_numerals/index.html#module-pywikitools.lang.native_numerals">pywikitools.lang.native_numerals</a>
+</li>
+          <li><a href="autoapi/pywikitools/lang/translated_page/index.html#module-pywikitools.lang.translated_page">pywikitools.lang.translated_page</a>
+</li>
+          <li><a href="autoapi/pywikitools/libreoffice/index.html#module-pywikitools.libreoffice">pywikitools.libreoffice</a>
+</li>
+          <li><a href="autoapi/pywikitools/mediawiki2drupal/index.html#module-pywikitools.mediawiki2drupal">pywikitools.mediawiki2drupal</a>
+</li>
+          <li><a href="autoapi/pywikitools/pdftools/index.html#module-pywikitools.pdftools">pywikitools.pdftools</a>
+</li>
+          <li><a href="autoapi/pywikitools/pdftools/metadata/index.html#module-pywikitools.pdftools.metadata">pywikitools.pdftools.metadata</a>
+</li>
+          <li><a href="autoapi/pywikitools/resources_bot/index.html#module-pywikitools.resources_bot">pywikitools.resources_bot</a>
+</li>
+          <li><a href="autoapi/pywikitools/resourcesbot/index.html#module-pywikitools.resourcesbot">pywikitools.resourcesbot</a>
+</li>
+          <li><a href="autoapi/pywikitools/resourcesbot/bot/index.html#module-pywikitools.resourcesbot.bot">pywikitools.resourcesbot.bot</a>
+</li>
+          <li><a href="autoapi/pywikitools/resourcesbot/changes/index.html#module-pywikitools.resourcesbot.changes">pywikitools.resourcesbot.changes</a>
+</li>
+          <li><a href="autoapi/pywikitools/resourcesbot/consistency_checks/index.html#module-pywikitools.resourcesbot.consistency_checks">pywikitools.resourcesbot.consistency_checks</a>
+</li>
+          <li><a href="autoapi/pywikitools/resourcesbot/data_structures/index.html#module-pywikitools.resourcesbot.data_structures">pywikitools.resourcesbot.data_structures</a>
+</li>
+          <li><a href="autoapi/pywikitools/resourcesbot/export_html/index.html#module-pywikitools.resourcesbot.export_html">pywikitools.resourcesbot.export_html</a>
+</li>
+          <li><a href="autoapi/pywikitools/resourcesbot/export_repository/index.html#module-pywikitools.resourcesbot.export_repository">pywikitools.resourcesbot.export_repository</a>
+</li>
+          <li><a href="autoapi/pywikitools/resourcesbot/post_processing/index.html#module-pywikitools.resourcesbot.post_processing">pywikitools.resourcesbot.post_processing</a>
+</li>
+          <li><a href="autoapi/pywikitools/resourcesbot/write_lists/index.html#module-pywikitools.resourcesbot.write_lists">pywikitools.resourcesbot.write_lists</a>
+</li>
+          <li><a href="autoapi/pywikitools/resourcesbot/write_report/index.html#module-pywikitools.resourcesbot.write_report">pywikitools.resourcesbot.write_report</a>
+</li>
+          <li><a href="autoapi/pywikitools/test/index.html#module-pywikitools.test">pywikitools.test</a>
+</li>
+          <li><a href="autoapi/pywikitools/test/test_beautifyhtml/index.html#module-pywikitools.test.test_beautifyhtml">pywikitools.test.test_beautifyhtml</a>
+</li>
+          <li><a href="autoapi/pywikitools/test/test_consistency_checks/index.html#module-pywikitools.test.test_consistency_checks">pywikitools.test.test_consistency_checks</a>
+</li>
+          <li><a href="autoapi/pywikitools/test/test_correctbot/index.html#module-pywikitools.test.test_correctbot">pywikitools.test.test_correctbot</a>
+</li>
+          <li><a href="autoapi/pywikitools/test/test_data_structures/index.html#module-pywikitools.test.test_data_structures">pywikitools.test.test_data_structures</a>
+</li>
+          <li><a href="autoapi/pywikitools/test/test_fortraininglib/index.html#module-pywikitools.test.test_fortraininglib">pywikitools.test.test_fortraininglib</a>
+</li>
+          <li><a href="autoapi/pywikitools/test/test_lang/index.html#module-pywikitools.test.test_lang">pywikitools.test.test_lang</a>
+</li>
+          <li><a href="autoapi/pywikitools/test/test_native_numerals/index.html#module-pywikitools.test.test_native_numerals">pywikitools.test.test_native_numerals</a>
+</li>
+          <li><a href="autoapi/pywikitools/test/test_pdftools_metadata/index.html#module-pywikitools.test.test_pdftools_metadata">pywikitools.test.test_pdftools_metadata</a>
+</li>
+          <li><a href="autoapi/pywikitools/test/test_resourcesbot/index.html#module-pywikitools.test.test_resourcesbot">pywikitools.test.test_resourcesbot</a>
+</li>
+          <li><a href="autoapi/pywikitools/test/test_translated_page/index.html#module-pywikitools.test.test_translated_page">pywikitools.test.test_translated_page</a>
+</li>
+          <li><a href="autoapi/pywikitools/test/test_translateodt/index.html#module-pywikitools.test.test_translateodt">pywikitools.test.test_translateodt</a>
+</li>
+          <li><a href="autoapi/pywikitools/test/test_write_lists/index.html#module-pywikitools.test.test_write_lists">pywikitools.test.test_write_lists</a>
+</li>
+          <li><a href="autoapi/pywikitools/test/test_write_report/index.html#module-pywikitools.test.test_write_report">pywikitools.test.test_write_report</a>
+</li>
+          <li><a href="autoapi/pywikitools/translateodt/index.html#module-pywikitools.translateodt">pywikitools.translateodt</a>
+</li>
+        </ul></li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="N" class="genindex-section">
+  <h2>N</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="autoapi/pywikitools/lang/native_numerals/index.html#pywikitools.lang.native_numerals.native_to_standard_numeral">native_to_standard_numeral() (in module pywikitools.lang.native_numerals)</a>
+</li>
+        <li><a href="autoapi/pywikitools/resourcesbot/write_lists/index.html#pywikitools.resourcesbot.write_lists.WriteList.needs_rewrite">needs_rewrite() (pywikitools.resourcesbot.write_lists.WriteList method)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="autoapi/correctors/universal/index.html#correctors.universal.NoSpaceBeforePunctuationCorrector">NoSpaceBeforePunctuationCorrector (class in correctors.universal)</a>
+</li>
+        <li><a href="autoapi/pywikitools/test/test_correctbot/index.html#pywikitools.test.test_correctbot.NoSpaceBeforePunctuationCorrectorTester">NoSpaceBeforePunctuationCorrectorTester (class in pywikitools.test.test_correctbot)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="O" class="genindex-section">
+  <h2>O</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="autoapi/check_translateodt/index.html#check_translateodt.DummyLibreOffice.open_file">open_file() (check_translateodt.DummyLibreOffice method)</a>
+
+        <ul>
+          <li><a href="autoapi/pywikitools/libreoffice/index.html#pywikitools.libreoffice.LibreOffice.open_file">(pywikitools.libreoffice.LibreOffice method)</a>
+</li>
+        </ul></li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="P" class="genindex-section">
+  <h2>P</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="autoapi/check_for_typos/index.html#check_for_typos.parse_arguments">parse_arguments() (in module check_for_typos)</a>
+
+        <ul>
+          <li><a href="autoapi/check_translateodt/index.html#check_translateodt.parse_arguments">(in module check_translateodt)</a>
+</li>
+          <li><a href="autoapi/correct_bot/index.html#correct_bot.parse_arguments">(in module correct_bot)</a>
+</li>
+          <li><a href="autoapi/pywikitools/resources_bot/index.html#pywikitools.resources_bot.parse_arguments">(in module pywikitools.resources_bot)</a>
+</li>
+        </ul></li>
+        <li><a href="autoapi/pywikitools/resourcesbot/data_structures/index.html#pywikitools.resourcesbot.data_structures.PdfMetadataSummary">PdfMetadataSummary (class in pywikitools.resourcesbot.data_structures)</a>
+</li>
+        <li><a href="autoapi/pywikitools/test/test_correctbot/index.html#pywikitools.test.test_correctbot.TestCorrectBot.prepare_translated_page">prepare_translated_page() (pywikitools.test.test_correctbot.TestCorrectBot method)</a>
+</li>
+        <li><a href="autoapi/correctors/base/index.html#correctors.base.CorrectorBase.print_stats">print_stats() (correctors.base.CorrectorBase method)</a>
+</li>
+        <li><a href="autoapi/pywikitools/htmltools/beautify_html/index.html#pywikitools.htmltools.beautify_html.BeautifyHTML.process_html">process_html() (pywikitools.htmltools.beautify_html.BeautifyHTML method)</a>
+</li>
+        <li><a href="autoapi/4training_family/index.html#training_family.Family.protocol">protocol() (4training_family.Family method)</a>
+</li>
+        <li>
+    pywikitools
+
+        <ul>
+          <li><a href="autoapi/pywikitools/index.html#module-pywikitools">module</a>
+</li>
+        </ul></li>
+        <li>
+    pywikitools.downloadalltranslations
+
+        <ul>
+          <li><a href="autoapi/pywikitools/downloadalltranslations/index.html#module-pywikitools.downloadalltranslations">module</a>
+</li>
+        </ul></li>
+        <li>
+    pywikitools.dropboxupload
+
+        <ul>
+          <li><a href="autoapi/pywikitools/dropboxupload/index.html#module-pywikitools.dropboxupload">module</a>
+</li>
+        </ul></li>
+        <li>
+    pywikitools.fortraininglib
+
+        <ul>
+          <li><a href="autoapi/pywikitools/fortraininglib/index.html#module-pywikitools.fortraininglib">module</a>
+</li>
+        </ul></li>
+        <li>
+    pywikitools.generateodtbot
+
+        <ul>
+          <li><a href="autoapi/pywikitools/generateodtbot/index.html#module-pywikitools.generateodtbot">module</a>
+</li>
+        </ul></li>
+        <li>
+    pywikitools.htmltools
+
+        <ul>
+          <li><a href="autoapi/pywikitools/htmltools/index.html#module-pywikitools.htmltools">module</a>
+</li>
+        </ul></li>
+        <li>
+    pywikitools.htmltools.beautify_html
+
+        <ul>
+          <li><a href="autoapi/pywikitools/htmltools/beautify_html/index.html#module-pywikitools.htmltools.beautify_html">module</a>
+</li>
+        </ul></li>
+        <li>
+    pywikitools.lang
+
+        <ul>
+          <li><a href="autoapi/pywikitools/lang/index.html#module-pywikitools.lang">module</a>
+</li>
+        </ul></li>
+        <li>
+    pywikitools.lang.libreoffice_lang
+
+        <ul>
+          <li><a href="autoapi/pywikitools/lang/libreoffice_lang/index.html#module-pywikitools.lang.libreoffice_lang">module</a>
+</li>
+        </ul></li>
+        <li>
+    pywikitools.lang.native_numerals
+
+        <ul>
+          <li><a href="autoapi/pywikitools/lang/native_numerals/index.html#module-pywikitools.lang.native_numerals">module</a>
+</li>
+        </ul></li>
+        <li>
+    pywikitools.lang.translated_page
+
+        <ul>
+          <li><a href="autoapi/pywikitools/lang/translated_page/index.html#module-pywikitools.lang.translated_page">module</a>
+</li>
+        </ul></li>
+        <li>
+    pywikitools.libreoffice
+
+        <ul>
+          <li><a href="autoapi/pywikitools/libreoffice/index.html#module-pywikitools.libreoffice">module</a>
+</li>
+        </ul></li>
+        <li>
+    pywikitools.mediawiki2drupal
+
+        <ul>
+          <li><a href="autoapi/pywikitools/mediawiki2drupal/index.html#module-pywikitools.mediawiki2drupal">module</a>
+</li>
+        </ul></li>
+        <li>
+    pywikitools.pdftools
+
+        <ul>
+          <li><a href="autoapi/pywikitools/pdftools/index.html#module-pywikitools.pdftools">module</a>
+</li>
+        </ul></li>
+        <li>
+    pywikitools.pdftools.metadata
+
+        <ul>
+          <li><a href="autoapi/pywikitools/pdftools/metadata/index.html#module-pywikitools.pdftools.metadata">module</a>
+</li>
+        </ul></li>
+        <li>
+    pywikitools.resources_bot
+
+        <ul>
+          <li><a href="autoapi/pywikitools/resources_bot/index.html#module-pywikitools.resources_bot">module</a>
+</li>
+        </ul></li>
+        <li>
+    pywikitools.resourcesbot
+
+        <ul>
+          <li><a href="autoapi/pywikitools/resourcesbot/index.html#module-pywikitools.resourcesbot">module</a>
+</li>
+        </ul></li>
+        <li>
+    pywikitools.resourcesbot.bot
+
+        <ul>
+          <li><a href="autoapi/pywikitools/resourcesbot/bot/index.html#module-pywikitools.resourcesbot.bot">module</a>
+</li>
+        </ul></li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li>
+    pywikitools.resourcesbot.changes
+
+        <ul>
+          <li><a href="autoapi/pywikitools/resourcesbot/changes/index.html#module-pywikitools.resourcesbot.changes">module</a>
+</li>
+        </ul></li>
+        <li>
+    pywikitools.resourcesbot.consistency_checks
+
+        <ul>
+          <li><a href="autoapi/pywikitools/resourcesbot/consistency_checks/index.html#module-pywikitools.resourcesbot.consistency_checks">module</a>
+</li>
+        </ul></li>
+        <li>
+    pywikitools.resourcesbot.data_structures
+
+        <ul>
+          <li><a href="autoapi/pywikitools/resourcesbot/data_structures/index.html#module-pywikitools.resourcesbot.data_structures">module</a>
+</li>
+        </ul></li>
+        <li>
+    pywikitools.resourcesbot.export_html
+
+        <ul>
+          <li><a href="autoapi/pywikitools/resourcesbot/export_html/index.html#module-pywikitools.resourcesbot.export_html">module</a>
+</li>
+        </ul></li>
+        <li>
+    pywikitools.resourcesbot.export_repository
+
+        <ul>
+          <li><a href="autoapi/pywikitools/resourcesbot/export_repository/index.html#module-pywikitools.resourcesbot.export_repository">module</a>
+</li>
+        </ul></li>
+        <li>
+    pywikitools.resourcesbot.post_processing
+
+        <ul>
+          <li><a href="autoapi/pywikitools/resourcesbot/post_processing/index.html#module-pywikitools.resourcesbot.post_processing">module</a>
+</li>
+        </ul></li>
+        <li>
+    pywikitools.resourcesbot.write_lists
+
+        <ul>
+          <li><a href="autoapi/pywikitools/resourcesbot/write_lists/index.html#module-pywikitools.resourcesbot.write_lists">module</a>
+</li>
+        </ul></li>
+        <li>
+    pywikitools.resourcesbot.write_report
+
+        <ul>
+          <li><a href="autoapi/pywikitools/resourcesbot/write_report/index.html#module-pywikitools.resourcesbot.write_report">module</a>
+</li>
+        </ul></li>
+        <li>
+    pywikitools.test
+
+        <ul>
+          <li><a href="autoapi/pywikitools/test/index.html#module-pywikitools.test">module</a>
+</li>
+        </ul></li>
+        <li>
+    pywikitools.test.test_beautifyhtml
+
+        <ul>
+          <li><a href="autoapi/pywikitools/test/test_beautifyhtml/index.html#module-pywikitools.test.test_beautifyhtml">module</a>
+</li>
+        </ul></li>
+        <li>
+    pywikitools.test.test_consistency_checks
+
+        <ul>
+          <li><a href="autoapi/pywikitools/test/test_consistency_checks/index.html#module-pywikitools.test.test_consistency_checks">module</a>
+</li>
+        </ul></li>
+        <li>
+    pywikitools.test.test_correctbot
+
+        <ul>
+          <li><a href="autoapi/pywikitools/test/test_correctbot/index.html#module-pywikitools.test.test_correctbot">module</a>
+</li>
+        </ul></li>
+        <li>
+    pywikitools.test.test_data_structures
+
+        <ul>
+          <li><a href="autoapi/pywikitools/test/test_data_structures/index.html#module-pywikitools.test.test_data_structures">module</a>
+</li>
+        </ul></li>
+        <li>
+    pywikitools.test.test_fortraininglib
+
+        <ul>
+          <li><a href="autoapi/pywikitools/test/test_fortraininglib/index.html#module-pywikitools.test.test_fortraininglib">module</a>
+</li>
+        </ul></li>
+        <li>
+    pywikitools.test.test_lang
+
+        <ul>
+          <li><a href="autoapi/pywikitools/test/test_lang/index.html#module-pywikitools.test.test_lang">module</a>
+</li>
+        </ul></li>
+        <li>
+    pywikitools.test.test_native_numerals
+
+        <ul>
+          <li><a href="autoapi/pywikitools/test/test_native_numerals/index.html#module-pywikitools.test.test_native_numerals">module</a>
+</li>
+        </ul></li>
+        <li>
+    pywikitools.test.test_pdftools_metadata
+
+        <ul>
+          <li><a href="autoapi/pywikitools/test/test_pdftools_metadata/index.html#module-pywikitools.test.test_pdftools_metadata">module</a>
+</li>
+        </ul></li>
+        <li>
+    pywikitools.test.test_resourcesbot
+
+        <ul>
+          <li><a href="autoapi/pywikitools/test/test_resourcesbot/index.html#module-pywikitools.test.test_resourcesbot">module</a>
+</li>
+        </ul></li>
+        <li>
+    pywikitools.test.test_translated_page
+
+        <ul>
+          <li><a href="autoapi/pywikitools/test/test_translated_page/index.html#module-pywikitools.test.test_translated_page">module</a>
+</li>
+        </ul></li>
+        <li>
+    pywikitools.test.test_translateodt
+
+        <ul>
+          <li><a href="autoapi/pywikitools/test/test_translateodt/index.html#module-pywikitools.test.test_translateodt">module</a>
+</li>
+        </ul></li>
+        <li>
+    pywikitools.test.test_write_lists
+
+        <ul>
+          <li><a href="autoapi/pywikitools/test/test_write_lists/index.html#module-pywikitools.test.test_write_lists">module</a>
+</li>
+        </ul></li>
+        <li>
+    pywikitools.test.test_write_report
+
+        <ul>
+          <li><a href="autoapi/pywikitools/test/test_write_report/index.html#module-pywikitools.test.test_write_report">module</a>
+</li>
+        </ul></li>
+        <li>
+    pywikitools.translateodt
+
+        <ul>
+          <li><a href="autoapi/pywikitools/translateodt/index.html#module-pywikitools.translateodt">module</a>
+</li>
+        </ul></li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="R" class="genindex-section">
+  <h2>R</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="autoapi/pywikitools/lang/translated_page/index.html#pywikitools.lang.translated_page.TranslationUnit.remove_links">remove_links() (pywikitools.lang.translated_page.TranslationUnit method)</a>
+</li>
+        <li><a href="autoapi/correctors/universal/index.html#correctors.universal.UniversalCorrector.remove_multiple_underscores_in_filename">remove_multiple_underscores_in_filename() (correctors.universal.UniversalCorrector method)</a>
+</li>
+        <li><a href="autoapi/correctors/universal/index.html#correctors.universal.UniversalCorrector.remove_spaces_in_filename">remove_spaces_in_filename() (correctors.universal.UniversalCorrector method)</a>
+</li>
+        <li><a href="autoapi/pywikitools/resourcesbot/bot/index.html#pywikitools.resourcesbot.bot.ResourcesBot">ResourcesBot (class in pywikitools.resourcesbot.bot)</a>
+</li>
+        <li><a href="autoapi/correctors/universal/index.html#correctors.universal.RTLCorrector">RTLCorrector (class in correctors.universal)</a>
+</li>
+        <li><a href="autoapi/pywikitools/test/test_correctbot/index.html#pywikitools.test.test_correctbot.RTLCorrectorTester">RTLCorrectorTester (class in pywikitools.test.test_correctbot)</a>
+</li>
+        <li><a href="autoapi/correct_bot/index.html#correct_bot.CorrectBot.run">run() (correct_bot.CorrectBot method)</a>
+
+        <ul>
+          <li><a href="autoapi/pywikitools/resourcesbot/consistency_checks/index.html#pywikitools.resourcesbot.consistency_checks.ConsistencyCheck.run">(pywikitools.resourcesbot.consistency_checks.ConsistencyCheck method)</a>
+</li>
+          <li><a href="autoapi/pywikitools/resourcesbot/export_html/index.html#pywikitools.resourcesbot.export_html.ExportHTML.run">(pywikitools.resourcesbot.export_html.ExportHTML method)</a>
+</li>
+          <li><a href="autoapi/pywikitools/resourcesbot/export_repository/index.html#pywikitools.resourcesbot.export_repository.ExportRepository.run">(pywikitools.resourcesbot.export_repository.ExportRepository method)</a>
+</li>
+          <li><a href="autoapi/pywikitools/resourcesbot/post_processing/index.html#pywikitools.resourcesbot.post_processing.GlobalPostProcessor.run">(pywikitools.resourcesbot.post_processing.GlobalPostProcessor method)</a>
+</li>
+          <li><a href="autoapi/pywikitools/resourcesbot/post_processing/index.html#pywikitools.resourcesbot.post_processing.LanguagePostProcessor.run">(pywikitools.resourcesbot.post_processing.LanguagePostProcessor method)</a>
+</li>
+          <li><a href="autoapi/pywikitools/resourcesbot/write_lists/index.html#pywikitools.resourcesbot.write_lists.WriteList.run">(pywikitools.resourcesbot.write_lists.WriteList method)</a>
+</li>
+          <li><a href="autoapi/pywikitools/resourcesbot/write_report/index.html#pywikitools.resourcesbot.write_report.WriteReport.run">(pywikitools.resourcesbot.write_report.WriteReport method)</a>
+</li>
+        </ul></li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="S" class="genindex-section">
+  <h2>S</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="autoapi/pywikitools/resourcesbot/write_report/index.html#pywikitools.resourcesbot.write_report.WriteReport.save_language_report">save_language_report() (pywikitools.resourcesbot.write_report.WriteReport method)</a>
+</li>
+        <li><a href="autoapi/check_translateodt/index.html#check_translateodt.DummyLibreOffice.save_odt">save_odt() (check_translateodt.DummyLibreOffice method)</a>
+
+        <ul>
+          <li><a href="autoapi/pywikitools/libreoffice/index.html#pywikitools.libreoffice.LibreOffice.save_odt">(pywikitools.libreoffice.LibreOffice method)</a>
+</li>
+        </ul></li>
+        <li><a href="autoapi/correct_bot/index.html#correct_bot.CorrectBot.save_to_mediawiki">save_to_mediawiki() (correct_bot.CorrectBot method)</a>
+</li>
+        <li><a href="autoapi/4training_family/index.html#training_family.Family.scriptpath">scriptpath() (4training_family.Family method)</a>
+</li>
+        <li><a href="autoapi/check_translateodt/index.html#check_translateodt.DummyLibreOffice.search_and_replace">search_and_replace() (check_translateodt.DummyLibreOffice method)</a>
+
+        <ul>
+          <li><a href="autoapi/pywikitools/libreoffice/index.html#pywikitools.libreoffice.LibreOffice.search_and_replace">(pywikitools.libreoffice.LibreOffice method)</a>
+</li>
+        </ul></li>
+        <li><a href="autoapi/check_translateodt/index.html#check_translateodt.DummyLibreOffice.set_default_style">set_default_style() (check_translateodt.DummyLibreOffice method)</a>
+
+        <ul>
+          <li><a href="autoapi/pywikitools/libreoffice/index.html#pywikitools.libreoffice.LibreOffice.set_default_style">(pywikitools.libreoffice.LibreOffice method)</a>
+</li>
+        </ul></li>
+        <li><a href="autoapi/pywikitools/lang/translated_page/index.html#pywikitools.lang.translated_page.TranslationUnit.set_definition">set_definition() (pywikitools.lang.translated_page.TranslationUnit method)</a>
+</li>
+        <li><a href="autoapi/pywikitools/resources_bot/index.html#pywikitools.resources_bot.set_loglevel">set_loglevel() (in module pywikitools.resources_bot)</a>
+</li>
+        <li><a href="autoapi/check_translateodt/index.html#check_translateodt.DummyLibreOffice.set_properties">set_properties() (check_translateodt.DummyLibreOffice method)</a>
+
+        <ul>
+          <li><a href="autoapi/pywikitools/libreoffice/index.html#pywikitools.libreoffice.LibreOffice.set_properties">(pywikitools.libreoffice.LibreOffice method)</a>
+</li>
+        </ul></li>
+        <li><a href="autoapi/pywikitools/lang/translated_page/index.html#pywikitools.lang.translated_page.TranslationUnit.set_translation">set_translation() (pywikitools.lang.translated_page.TranslationUnit method)</a>
+</li>
+        <li><a href="autoapi/pywikitools/test/test_consistency_checks/index.html#pywikitools.test.test_consistency_checks.TestConsistencyCheck.setUp">setUp() (pywikitools.test.test_consistency_checks.TestConsistencyCheck method)</a>
+
+        <ul>
+          <li><a href="autoapi/pywikitools/test/test_correctbot/index.html#pywikitools.test.test_correctbot.TestCorrectBot.setUp">(pywikitools.test.test_correctbot.TestCorrectBot method)</a>
+</li>
+          <li><a href="autoapi/pywikitools/test/test_correctbot/index.html#pywikitools.test.test_correctbot.TestLanguageCorrectors.setUp">(pywikitools.test.test_correctbot.TestLanguageCorrectors method)</a>
+</li>
+          <li><a href="autoapi/pywikitools/test/test_data_structures/index.html#pywikitools.test.test_data_structures.TestLanguageInfo.setUp">(pywikitools.test.test_data_structures.TestLanguageInfo method)</a>
+</li>
+          <li><a href="autoapi/pywikitools/test/test_data_structures/index.html#pywikitools.test.test_data_structures.TestLanguageInfoComparison.setUp">(pywikitools.test.test_data_structures.TestLanguageInfoComparison method)</a>
+</li>
+          <li><a href="autoapi/pywikitools/test/test_data_structures/index.html#pywikitools.test.test_data_structures.TestWorksheetInfo.setUp">(pywikitools.test.test_data_structures.TestWorksheetInfo method)</a>
+</li>
+          <li><a href="autoapi/pywikitools/test/test_fortraininglib/index.html#pywikitools.test.test_fortraininglib.TestFortrainingLib.setUp">(pywikitools.test.test_fortraininglib.TestFortrainingLib method)</a>
+</li>
+          <li><a href="autoapi/pywikitools/test/test_lang/index.html#pywikitools.test.test_lang.TestLang.setUp">(pywikitools.test.test_lang.TestLang method)</a>
+</li>
+          <li><a href="autoapi/pywikitools/test/test_pdftools_metadata/index.html#pywikitools.test.test_pdftools_metadata.TestPdfMetadata.setUp">(pywikitools.test.test_pdftools_metadata.TestPdfMetadata method)</a>
+</li>
+          <li><a href="autoapi/pywikitools/test/test_resourcesbot/index.html#pywikitools.test.test_resourcesbot.TestResourcesBot.setUp">(pywikitools.test.test_resourcesbot.TestResourcesBot method)</a>
+</li>
+          <li><a href="autoapi/pywikitools/test/test_translateodt/index.html#pywikitools.test.test_translateodt.TestTranslateODT.setUp">(pywikitools.test.test_translateodt.TestTranslateODT method)</a>
+</li>
+          <li><a href="autoapi/pywikitools/test/test_write_report/index.html#pywikitools.test.test_write_report.TestWriteReport.setUp">(pywikitools.test.test_write_report.TestWriteReport method)</a>
+</li>
+        </ul></li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="autoapi/pywikitools/test/test_correctbot/index.html#pywikitools.test.test_correctbot.TestArabicCorrector.setUpClass">setUpClass() (pywikitools.test.test_correctbot.TestArabicCorrector class method)</a>
+
+        <ul>
+          <li><a href="autoapi/pywikitools/test/test_correctbot/index.html#pywikitools.test.test_correctbot.TestRTLCorrector.setUpClass">(pywikitools.test.test_correctbot.TestRTLCorrector class method)</a>
+</li>
+          <li><a href="autoapi/pywikitools/test/test_write_lists/index.html#pywikitools.test.test_write_lists.TestWriteList.setUpClass">(pywikitools.test.test_write_lists.TestWriteList class method)</a>
+</li>
+        </ul></li>
+        <li><a href="autoapi/pywikitools/resourcesbot/consistency_checks/index.html#pywikitools.resourcesbot.consistency_checks.ConsistencyCheck.should_be_equal">should_be_equal() (pywikitools.resourcesbot.consistency_checks.ConsistencyCheck method)</a>
+</li>
+        <li><a href="autoapi/pywikitools/resourcesbot/consistency_checks/index.html#pywikitools.resourcesbot.consistency_checks.ConsistencyCheck.should_start_with">should_start_with() (pywikitools.resourcesbot.consistency_checks.ConsistencyCheck method)</a>
+</li>
+        <li><a href="autoapi/pywikitools/lang/translated_page/index.html#pywikitools.lang.translated_page.SnippetType">SnippetType (class in pywikitools.lang.translated_page)</a>
+</li>
+        <li><a href="autoapi/pywikitools/lang/translated_page/index.html#pywikitools.lang.translated_page.TranslationUnit.split_into_snippets">split_into_snippets() (pywikitools.lang.translated_page.TranslationUnit static method)</a>
+</li>
+        <li><a href="autoapi/correctors/base/index.html#correctors.base.suggest_only">suggest_only() (in module correctors.base)</a>
+</li>
+        <li><a href="autoapi/pywikitools/lang/translated_page/index.html#pywikitools.lang.translated_page.TranslationUnit.sync_from_snippets">sync_from_snippets() (pywikitools.lang.translated_page.TranslationUnit method)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="T" class="genindex-section">
+  <h2>T</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="autoapi/pywikitools/test/test_consistency_checks/index.html#pywikitools.test.test_consistency_checks.TestConsistencyCheck.tearDown">tearDown() (pywikitools.test.test_consistency_checks.TestConsistencyCheck method)</a>
+
+        <ul>
+          <li><a href="autoapi/pywikitools/test/test_fortraininglib/index.html#pywikitools.test.test_fortraininglib.TestFortrainingLib.tearDown">(pywikitools.test.test_fortraininglib.TestFortrainingLib method)</a>
+</li>
+          <li><a href="autoapi/pywikitools/test/test_resourcesbot/index.html#pywikitools.test.test_resourcesbot.TestResourcesBot.tearDown">(pywikitools.test.test_resourcesbot.TestResourcesBot method)</a>
+</li>
+          <li><a href="autoapi/pywikitools/test/test_translateodt/index.html#pywikitools.test.test_translateodt.TestTranslateODT.tearDown">(pywikitools.test.test_translateodt.TestTranslateODT method)</a>
+</li>
+        </ul></li>
+        <li><a href="autoapi/pywikitools/test/test_write_lists/index.html#pywikitools.test.test_write_lists.TestWriteList.test_create_mediawiki">test_create_mediawiki() (pywikitools.test.test_write_lists.TestWriteList method)</a>
+</li>
+        <li><a href="autoapi/pywikitools/test/test_consistency_checks/index.html#pywikitools.test.test_consistency_checks.TestConsistencyCheck.test_everything_in_english">test_everything_in_english() (pywikitools.test.test_consistency_checks.TestConsistencyCheck method)</a>
+</li>
+        <li><a href="autoapi/pywikitools/test/test_correctbot/index.html#pywikitools.test.test_correctbot.TestLanguageCorrectors.test_for_correct_parameters">test_for_correct_parameters() (pywikitools.test.test_correctbot.TestLanguageCorrectors method)</a>
+</li>
+        <li><a href="autoapi/pywikitools/test/test_correctbot/index.html#pywikitools.test.test_correctbot.TestLanguageCorrectors.test_for_function_documentation">test_for_function_documentation() (pywikitools.test.test_correctbot.TestLanguageCorrectors method)</a>
+</li>
+        <li><a href="autoapi/pywikitools/test/test_correctbot/index.html#pywikitools.test.test_correctbot.TestLanguageCorrectors.test_for_meaningful_names">test_for_meaningful_names() (pywikitools.test.test_correctbot.TestLanguageCorrectors method)</a>
+</li>
+        <li><a href="autoapi/pywikitools/test/test_correctbot/index.html#pywikitools.test.test_correctbot.TestLanguageCorrectors.test_for_unique_function_names">test_for_unique_function_names() (pywikitools.test.test_correctbot.TestLanguageCorrectors method)</a>
+</li>
+        <li><a href="autoapi/pywikitools/test/test_correctbot/index.html#pywikitools.test.test_correctbot.TestFrenchCorrector.test_punctuation">test_punctuation() (pywikitools.test.test_correctbot.TestFrenchCorrector method)</a>
+</li>
+        <li><a href="autoapi/pywikitools/test/test_correctbot/index.html#pywikitools.test.test_correctbot.TestCorrectBot.test_save_report">test_save_report() (pywikitools.test.test_correctbot.TestCorrectBot method)</a>
+</li>
+        <li><a href="autoapi/pywikitools/test/test_data_structures/index.html#pywikitools.test.test_data_structures.TestLanguageInfo.test_serialization">test_serialization() (pywikitools.test.test_data_structures.TestLanguageInfo method)</a>
+</li>
+        <li><a href="autoapi/pywikitools/test/test_beautifyhtml/index.html#pywikitools.test.test_beautifyhtml.TestBeautifyHTML.test_with_real_example">test_with_real_example() (pywikitools.test.test_beautifyhtml.TestBeautifyHTML method)</a>
+</li>
+        <li><a href="autoapi/pywikitools/test/test_correctbot/index.html#pywikitools.test.test_correctbot.TestArabicCorrector">TestArabicCorrector (class in pywikitools.test.test_correctbot)</a>
+</li>
+        <li><a href="autoapi/pywikitools/test/test_beautifyhtml/index.html#pywikitools.test.test_beautifyhtml.TestBeautifyHTML">TestBeautifyHTML (class in pywikitools.test.test_beautifyhtml)</a>
+</li>
+        <li><a href="autoapi/pywikitools/test/test_consistency_checks/index.html#pywikitools.test.test_consistency_checks.TestConsistencyCheck">TestConsistencyCheck (class in pywikitools.test.test_consistency_checks)</a>
+</li>
+        <li><a href="autoapi/pywikitools/test/test_correctbot/index.html#pywikitools.test.test_correctbot.TestCorrectBot">TestCorrectBot (class in pywikitools.test.test_correctbot)</a>
+</li>
+        <li><a href="autoapi/pywikitools/test/test_data_structures/index.html#pywikitools.test.test_data_structures.TestFileInfo">TestFileInfo (class in pywikitools.test.test_data_structures)</a>
+</li>
+        <li><a href="autoapi/pywikitools/test/test_fortraininglib/index.html#pywikitools.test.test_fortraininglib.TestFortrainingLib">TestFortrainingLib (class in pywikitools.test.test_fortraininglib)</a>
+</li>
+        <li><a href="autoapi/pywikitools/test/test_correctbot/index.html#pywikitools.test.test_correctbot.TestFrenchCorrector">TestFrenchCorrector (class in pywikitools.test.test_correctbot)</a>
+</li>
+        <li><a href="autoapi/pywikitools/test/test_correctbot/index.html#pywikitools.test.test_correctbot.TestGermanCorrector">TestGermanCorrector (class in pywikitools.test.test_correctbot)</a>
+</li>
+        <li><a href="autoapi/pywikitools/test/test_lang/index.html#pywikitools.test.test_lang.TestLang">TestLang (class in pywikitools.test.test_lang)</a>
+</li>
+        <li><a href="autoapi/pywikitools/test/test_correctbot/index.html#pywikitools.test.test_correctbot.TestLanguageCorrectors">TestLanguageCorrectors (class in pywikitools.test.test_correctbot)</a>
+</li>
+        <li><a href="autoapi/pywikitools/test/test_data_structures/index.html#pywikitools.test.test_data_structures.TestLanguageInfo">TestLanguageInfo (class in pywikitools.test.test_data_structures)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="autoapi/pywikitools/test/test_data_structures/index.html#pywikitools.test.test_data_structures.TestLanguageInfoComparison">TestLanguageInfoComparison (class in pywikitools.test.test_data_structures)</a>
+</li>
+        <li><a href="autoapi/pywikitools/test/test_native_numerals/index.html#pywikitools.test.test_native_numerals.TestNativeNumerals">TestNativeNumerals (class in pywikitools.test.test_native_numerals)</a>
+</li>
+        <li><a href="autoapi/pywikitools/test/test_correctbot/index.html#pywikitools.test.test_correctbot.TestNoSpaceBeforePunctuationCorrector">TestNoSpaceBeforePunctuationCorrector (class in pywikitools.test.test_correctbot)</a>
+</li>
+        <li><a href="autoapi/pywikitools/test/test_pdftools_metadata/index.html#pywikitools.test.test_pdftools_metadata.TestPdfMetadata">TestPdfMetadata (class in pywikitools.test.test_pdftools_metadata)</a>
+</li>
+        <li><a href="autoapi/pywikitools/test/test_data_structures/index.html#pywikitools.test.test_data_structures.TestPdfMetadataSummary">TestPdfMetadataSummary (class in pywikitools.test.test_data_structures)</a>
+</li>
+        <li><a href="autoapi/pywikitools/test/test_resourcesbot/index.html#pywikitools.test.test_resourcesbot.TestResourcesBot">TestResourcesBot (class in pywikitools.test.test_resourcesbot)</a>
+</li>
+        <li><a href="autoapi/pywikitools/test/test_correctbot/index.html#pywikitools.test.test_correctbot.TestRTLCorrector">TestRTLCorrector (class in pywikitools.test.test_correctbot)</a>
+</li>
+        <li><a href="autoapi/pywikitools/test/test_translated_page/index.html#pywikitools.test.test_translated_page.TestTranslatedPage">TestTranslatedPage (class in pywikitools.test.test_translated_page)</a>
+</li>
+        <li><a href="autoapi/pywikitools/test/test_translateodt/index.html#pywikitools.test.test_translateodt.TestTranslateODT">TestTranslateODT (class in pywikitools.test.test_translateodt)</a>
+</li>
+        <li><a href="autoapi/pywikitools/test/test_data_structures/index.html#pywikitools.test.test_data_structures.TestTranslationProgress">TestTranslationProgress (class in pywikitools.test.test_data_structures)</a>
+</li>
+        <li><a href="autoapi/pywikitools/test/test_translated_page/index.html#pywikitools.test.test_translated_page.TestTranslationSnippet">TestTranslationSnippet (class in pywikitools.test.test_translated_page)</a>
+</li>
+        <li><a href="autoapi/pywikitools/test/test_translated_page/index.html#pywikitools.test.test_translated_page.TestTranslationUnit">TestTranslationUnit (class in pywikitools.test.test_translated_page)</a>
+</li>
+        <li><a href="autoapi/pywikitools/test/test_correctbot/index.html#pywikitools.test.test_correctbot.TestUniversalCorrector">TestUniversalCorrector (class in pywikitools.test.test_correctbot)</a>
+</li>
+        <li><a href="autoapi/pywikitools/test/test_data_structures/index.html#pywikitools.test.test_data_structures.TestWorksheetInfo">TestWorksheetInfo (class in pywikitools.test.test_data_structures)</a>
+</li>
+        <li><a href="autoapi/pywikitools/test/test_write_lists/index.html#pywikitools.test.test_write_lists.TestWriteList">TestWriteList (class in pywikitools.test.test_write_lists)</a>
+</li>
+        <li><a href="autoapi/pywikitools/test/test_write_report/index.html#pywikitools.test.test_write_report.TestWriteReport">TestWriteReport (class in pywikitools.test.test_write_report)</a>
+</li>
+        <li><a href="autoapi/pywikitools/libreoffice/index.html#pywikitools.libreoffice.LibreOffice.TIMEOUT">TIMEOUT (pywikitools.libreoffice.LibreOffice attribute)</a>
+</li>
+        <li><a href="autoapi/correctors/base/index.html#correctors.base.CorrectorBase.title_correct">title_correct() (correctors.base.CorrectorBase method)</a>
+
+        <ul>
+          <li><a href="autoapi/pywikitools/test/test_correctbot/index.html#pywikitools.test.test_correctbot.title_correct">(in module pywikitools.test.test_correctbot)</a>
+</li>
+        </ul></li>
+        <li><a href="autoapi/pywikitools/resourcesbot/data_structures/index.html#pywikitools.resourcesbot.data_structures.PdfMetadataSummary.to_html">to_html() (pywikitools.resourcesbot.data_structures.PdfMetadataSummary method)</a>
+</li>
+        <li><a href="autoapi/pywikitools/lang/libreoffice_lang/index.html#pywikitools.lang.libreoffice_lang.Lang.to_locale">to_locale() (pywikitools.lang.libreoffice_lang.Lang method)</a>
+</li>
+        <li><a href="autoapi/pywikitools/resourcesbot/data_structures/index.html#pywikitools.resourcesbot.data_structures.PdfMetadataSummary.to_string">to_string() (pywikitools.resourcesbot.data_structures.PdfMetadataSummary method)</a>
+</li>
+        <li><a href="autoapi/pywikitools/lang/translated_page/index.html#pywikitools.lang.translated_page.TranslatedPage">TranslatedPage (class in pywikitools.lang.translated_page)</a>
+</li>
+        <li><a href="autoapi/pywikitools/translateodt/index.html#pywikitools.translateodt.TranslateOdtConfig">TranslateOdtConfig (class in pywikitools.translateodt)</a>
+</li>
+        <li><a href="autoapi/pywikitools/lang/translated_page/index.html#pywikitools.lang.translated_page.TranslationSnippet">TranslationSnippet (class in pywikitools.lang.translated_page)</a>
+</li>
+        <li><a href="autoapi/pywikitools/lang/translated_page/index.html#pywikitools.lang.translated_page.TranslationUnit">TranslationUnit (class in pywikitools.lang.translated_page)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="U" class="genindex-section">
+  <h2>U</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="autoapi/correctors/universal/index.html#correctors.universal.UniversalCorrector">UniversalCorrector (class in correctors.universal)</a>
+</li>
+        <li><a href="autoapi/pywikitools/test/test_correctbot/index.html#pywikitools.test.test_correctbot.UniversalCorrectorTester">UniversalCorrectorTester (class in pywikitools.test.test_correctbot)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="autoapi/pywikitools/dropboxupload/index.html#pywikitools.dropboxupload.upload_file">upload_file() (in module pywikitools.dropboxupload)</a>
+</li>
+        <li><a href="autoapi/pywikitools/dropboxupload/index.html#pywikitools.dropboxupload.upload_string">upload_string() (in module pywikitools.dropboxupload)</a>
+</li>
+        <li><a href="autoapi/correctors/base/index.html#correctors.base.use_snippets">use_snippets() (in module correctors.base)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="W" class="genindex-section">
+  <h2>W</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="autoapi/pywikitools/resourcesbot/data_structures/index.html#pywikitools.resourcesbot.data_structures.LanguageInfo.worksheet_has_type">worksheet_has_type() (pywikitools.resourcesbot.data_structures.LanguageInfo method)</a>
+</li>
+        <li><a href="autoapi/pywikitools/resourcesbot/data_structures/index.html#pywikitools.resourcesbot.data_structures.WorksheetInfo">WorksheetInfo (class in pywikitools.resourcesbot.data_structures)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="autoapi/pywikitools/resourcesbot/write_lists/index.html#pywikitools.resourcesbot.write_lists.WriteList">WriteList (class in pywikitools.resourcesbot.write_lists)</a>
+</li>
+        <li><a href="autoapi/pywikitools/resourcesbot/write_report/index.html#pywikitools.resourcesbot.write_report.WriteReport">WriteReport (class in pywikitools.resourcesbot.write_report)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2022, 4training
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              
+            </div>
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer no-toc">
+      
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/scripts/furo.js"></script>
+    </body>
+</html>
